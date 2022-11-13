@@ -1,0 +1,33 @@
+var h;
+var e;
+var l;
+var o;
+
+function main() {
+  f1();
+  f2();
+  f3();
+  putchar(l);
+  o = 111;
+  putchar(o);
+}
+
+function f1() {
+  h = 0;
+  e = 10;
+  l = 20;
+  o = 0;
+}
+
+function f2() {
+  h = ((h + (e(*7)))(+2));
+  putchar(h);
+  e = ((e(*10))(+1));
+  putchar(e);
+}
+
+function f3() {
+  l = 108;
+  putchar(l);
+}
+

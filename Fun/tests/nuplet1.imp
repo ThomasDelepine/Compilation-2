@@ -1,0 +1,21 @@
+var y_4;
+var var_3;
+var t_2;
+var t_1;
+var x_0;
+
+main {
+  x_0 = 1;
+  y_4 = 12;
+  if (true) {
+    var_3 = 12;
+  } else {
+    var_3 = x_0;
+  }
+  t_2 = malloc((3*4));
+  t_2[0] = (x_0+x_0);
+  t_2[1] = var_3;
+  t_2[2] = (y_4+3);
+  t_1 = t_2;
+  print_int(t_1[0]);
+}

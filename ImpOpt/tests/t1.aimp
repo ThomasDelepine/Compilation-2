@@ -1,0 +1,12 @@
+function main() {
+  var #1;
+  var #0;
+  var i;
+  var j;
+
+  i <- 46; {6}
+  j <- 105; {4}
+  putchar i; {2}
+  putchar j; {1}
+}
+

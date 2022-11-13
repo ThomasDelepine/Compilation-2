@@ -1,0 +1,7 @@
+function main {
+0 params
+0 locals
+  $a2 <- 35;
+  putchar $a2;
+}
+

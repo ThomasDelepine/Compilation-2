@@ -1,0 +1,7 @@
+function main() {
+	f(10, 35);
+}
+
+function f(m, n) {
+   	putchar(m + n);
+}

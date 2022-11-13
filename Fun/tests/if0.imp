@@ -1,0 +1,10 @@
+var var_0;
+
+main {
+  if (true) {
+    var_0 = 1;
+  } else {
+    var_0 = 2;
+  }
+  print_int(var_0);
+}

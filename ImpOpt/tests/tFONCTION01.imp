@@ -1,0 +1,12 @@
+var a;
+var b;
+
+function main() {
+	f();
+}
+
+function f() {
+   a = 30;
+   b = 5;
+   putchar(a + b);
+}

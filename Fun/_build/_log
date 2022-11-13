@@ -1,0 +1,82 @@
+### Starting build.
+# Target: func.ml.depends, tags: { bin_annot, explain, extension:ml, file:func.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules func.ml > func.ml.depends # cached
+# Target: clj2imp.ml.depends, tags: { bin_annot, explain, extension:ml, file:clj2imp.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules clj2imp.ml > clj2imp.ml.depends
+# Target: clj.ml.depends, tags: { bin_annot, explain, extension:ml, file:clj.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules clj.ml > clj.ml.depends # cached
+# Target: ops.ml.depends, tags: { bin_annot, explain, extension:ml, file:ops.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules ops.ml > ops.ml.depends # cached
+# Target: ops.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:ops.cmo, file:ops.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o ops.cmo ops.ml # cached
+# Target: clj.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:clj.cmo, file:clj.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o clj.cmo clj.ml # cached
+# Target: imp.ml.depends, tags: { bin_annot, explain, extension:ml, file:imp.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules imp.ml > imp.ml.depends # cached
+# Target: imp.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:imp.cmo, file:imp.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o imp.cmo imp.ml # cached
+# Target: fun2clj.ml.depends, tags: { bin_annot, explain, extension:ml, file:fun2clj.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules fun2clj.ml > fun2clj.ml.depends # cached
+# Target: fun.ml.depends, tags: { bin_annot, explain, extension:ml, file:fun.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules fun.ml > fun.ml.depends # cached
+# Target: fun.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:fun.cmo, file:fun.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o fun.cmo fun.ml # cached
+# Target: fun2clj.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:fun2clj.cmo, file:fun2clj.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o fun2clj.cmo fun2clj.ml # cached
+# Target: funlexer.mll, tags: { bin_annot, explain, extension:mll, file:funlexer.mll, lexer, ocaml, ocamllex, quiet, traverse, use_menhir }
+ocamllex.opt -q funlexer.mll # cached
+# Target: funlexer.ml.depends, tags: { bin_annot, explain, extension:ml, file:funlexer.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules funlexer.ml > funlexer.ml.depends # cached
+# Target: funparser.mly.depends, tags: { bin_annot, explain, extension:mly, file:funparser.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet, traverse, use_menhir }
+menhir --raw-depend --ocamldep 'ocamldep.opt -modules' funparser.mly > funparser.mly.depends # cached
+# Target: funparser.mly, tags: { bin_annot, byte, compile, explain, extension:ml, extension:mly, file:funparser.ml, file:funparser.mly, infer, menhir, ocaml, parser, quiet, traverse, use_menhir }
+menhir --ocamlc 'ocamlc.opt -bin-annot' --explain --infer funparser.mly # cached
+# Target: funparser.mli.depends, tags: { bin_annot, explain, extension:mli, file:funparser.mli, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules funparser.mli > funparser.mli.depends # cached
+# Target: funparser.cmi, tags: { bin_annot, byte, compile, explain, extension:mli, file:funparser.mli, interf, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o funparser.cmi funparser.mli # cached
+# Target: funlexer.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:funlexer.cmo, file:funlexer.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o funlexer.cmo funlexer.ml # cached
+# Target: imppp.ml.depends, tags: { bin_annot, explain, extension:ml, file:imppp.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules imppp.ml > imppp.ml.depends # cached
+# Target: imppp.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:imppp.cmo, file:imppp.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o imppp.cmo imppp.ml # cached
+# Target: clj2imp.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:clj2imp.cmo, file:clj2imp.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o clj2imp.cmo clj2imp.ml
++ ocamlc.opt -c -bin-annot -o clj2imp.cmo clj2imp.ml
+File "clj2imp.ml", line 128, characters 8-9:
+128 |       | _ ->
+              ^
+Warning 11 [redundant-case]: this match case is unused.
+# Target: func.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:func.cmo, file:func.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlc.opt -c -bin-annot -o func.cmo func.ml
+# Target: ops.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:ops.cmx, file:ops.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o ops.cmx ops.ml # cached
+# Target: clj.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:clj.cmx, file:clj.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o clj.cmx clj.ml # cached
+# Target: imp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:imp.cmx, file:imp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o imp.cmx imp.ml # cached
+# Target: fun.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:fun.cmx, file:fun.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o fun.cmx fun.ml # cached
+# Target: fun2clj.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:fun2clj.cmx, file:fun2clj.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o fun2clj.cmx fun2clj.ml # cached
+# Target: funparser.ml.depends, tags: { bin_annot, explain, extension:ml, file:funparser.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamldep.opt -modules funparser.ml > funparser.ml.depends # cached
+# Target: funparser.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:funparser.cmx, file:funparser.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o funparser.cmx funparser.ml # cached
+# Target: funlexer.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:funlexer.cmx, file:funlexer.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o funlexer.cmx funlexer.ml # cached
+# Target: imppp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:imppp.cmx, file:imppp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o imppp.cmx imppp.ml # cached
+# Target: clj2imp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:clj2imp.cmx, file:clj2imp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o clj2imp.cmx clj2imp.ml
++ ocamlopt.opt -c -bin-annot -o clj2imp.cmx clj2imp.ml
+File "clj2imp.ml", line 128, characters 8-9:
+128 |       | _ ->
+              ^
+Warning 11 [redundant-case]: this match case is unused.
+# Target: func.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:func.cmx, file:func.ml, implem, native, ocaml, quiet, traverse, use_menhir }
+ocamlopt.opt -c -bin-annot -o func.cmx func.ml
+# Target: func.native, tags: { bin_annot, dont_link_with, explain, extension:native, file:func.native, link, native, ocaml, program, quiet, traverse, use_menhir }
+ocamlopt.opt ops.cmx clj.cmx imp.cmx clj2imp.cmx fun.cmx fun2clj.cmx funparser.cmx funlexer.cmx imppp.cmx func.cmx -o func.native
+# Compilation successful.

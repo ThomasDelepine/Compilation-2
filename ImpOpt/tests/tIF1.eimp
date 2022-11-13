@@ -1,0 +1,15 @@
+function main {
+0 params
+0 locals
+  $a3 <- 1;
+  $a2 <- 2;
+  $a2 <- $a3 < $a2;
+  if ($a2) {
+    $a2 <- 35;
+    putchar $a2;
+  } else {
+    $a2 <- 36;
+    putchar $a2;
+  }
+}
+

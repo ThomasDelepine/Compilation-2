@@ -1,0 +1,5 @@
+var i;
+function main() {
+  i = 35;
+  putchar(i);
+}

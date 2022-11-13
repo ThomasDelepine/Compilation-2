@@ -1,0 +1,12 @@
+function main() {
+	f(35);
+}
+
+function f(n) {
+   	var i;
+	i = 0;
+     	while(i < 10) {
+		putchar(n);
+ 		i = i + 1;
+	}
+}

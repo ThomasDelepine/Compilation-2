@@ -1,0 +1,22 @@
+var a;
+var b;
+
+function main {
+0 params
+0 locals
+  call f;
+}
+
+function f {
+0 params
+0 locals
+  $a2 <- 30;
+  *a <- $a2;
+  $a2 <- 5;
+  *b <- $a2;
+  $a3 <- *a;
+  $a2 <- *b;
+  $a2 <- $a3 + $a2;
+  putchar $a2;
+}
+

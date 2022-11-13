@@ -1,0 +1,26 @@
+function main() {
+  var arg;
+  var retour;
+  var espace;
+  var i;
+  var j;
+  arg = 37;
+  i = 0;
+  retour = 10;
+  espace = 32;
+
+  while (i < arg+1) {
+    j = 0;
+    while (j < arg+1) {
+      if (i*i + j*j < arg*arg) {
+        putchar(46);
+      } else {
+        putchar(35);
+      }
+      putchar(espace);
+      j = j+1;
+    }
+    putchar(retour);
+    i = i + 1;
+  }
+}

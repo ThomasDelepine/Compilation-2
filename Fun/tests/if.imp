@@ -1,0 +1,16 @@
+var var_1;
+var var_0;
+
+main {
+  if ((true||false)) {
+    if (false) {
+      var_0 = 6;
+    } else {
+      var_0 = 7;
+    }
+    var_1 = var_0;
+  } else {
+    var_1 = 8;
+  }
+  print_int((6*var_1));
+}

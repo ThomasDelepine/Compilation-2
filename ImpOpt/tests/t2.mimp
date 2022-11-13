@@ -1,0 +1,9 @@
+function main() {
+  var i;
+  var j;
+
+  i = 46;
+  j = 105;
+  putchar(i);
+}
+

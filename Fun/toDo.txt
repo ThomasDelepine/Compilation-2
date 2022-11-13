@@ -1,0 +1,4 @@
+1-faire If
+2-opti les opérations arithm et booléaines
+3-vérifier tupple
+4-faire fun

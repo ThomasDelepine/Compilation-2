@@ -1,0 +1,67 @@
+var retour;
+var espace;
+
+function main {
+1 params
+1 locals
+  $a3 <- 0;
+  $a2 <- 10;
+  *retour <- $a2;
+  $a2 <- 32;
+  *espace <- $a2;
+  $t0 <- *{-2};
+  $a2 <- $t0(+1);
+  $a2 <- $a3 < $a2;
+  while (
+    $t0 <- *{-2};
+    $a2 <- $t0(+1);
+    $a2 <- $a3 < $a2;
+    $a2
+  ) {
+    push $a3;
+    $t0 <- *{-2};
+    push $t0;
+    call affiche_ligne;
+    $a2 <- *retour;
+    putchar $a2;
+    $a2 <- $a3(+1);
+    $a3 <- $a2;
+  }
+}
+
+function affiche_ligne {
+2 params
+2 locals
+  $a3 <- 0;
+  $t0 <- *{-3};
+  $s0 <- $t0(+1);
+  $s0 <- $a3 < $s0;
+  while (
+    $t0 <- *{-3};
+    $s0 <- $t0(+1);
+    $s0 <- $a3 < $s0;
+    $s0
+  ) {
+    $t0 <- *{-2};
+    $t1 <- *{-2};
+    $s1 <- $t0 * $t1;
+    $s0 <- $a3 * $a3;
+    $s1 <- $s1 + $s0;
+    $t0 <- *{-3};
+    $t1 <- *{-3};
+    $s0 <- $t0 * $t1;
+    $s0 <- $s1 < $s0;
+    if ($s0) {
+      $s0 <- 46;
+      putchar $s0;
+    } else {
+      $s0 <- 35;
+      putchar $s0;
+    }
+    $s0 <- *espace;
+    putchar $s0;
+    $a3 <- $a3(+1);
+    $a3 <- $a3;
+  }
+}
+

@@ -1,0 +1,77 @@
+var retour;
+var espace;
+
+function main(arg) {
+  var #6;
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var i;
+
+  i <- 0; {16}
+  #5 <- 10; {13}
+  *retour <- #5; {14}
+  #4 <- 32; {11}
+  *espace <- #4; {12}
+  #0 <- arg(+1); {1}
+  #1 <- i < #0; {2}
+  while (
+    #0 <- arg(+1); {1}
+    #1 <- i < #0; {2}
+    #1
+  ) {
+    push i; {7}
+    push arg; {8}
+    call affiche_ligne (2); {9}
+    #3 <- *retour; {5}
+    putchar #3; {6}
+    #2 <- i(+1); {3}
+    i <- #2; {4}
+  } {10}
+}
+
+function affiche_ligne(i, n) {
+  var #11;
+  var #10;
+  var #9;
+  var #8;
+  var #7;
+  var #6;
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var j;
+
+  j <- 0; {35}
+  #0 <- n(+1); {17}
+  #1 <- j < #0; {18}
+  while (
+    #0 <- n(+1); {17}
+    #1 <- j < #0; {18}
+    #1
+  ) {
+    #4 <- i * i; {23}
+    #5 <- j * j; {24}
+    #6 <- #4 + #5; {25}
+    #7 <- n * n; {26}
+    #8 <- #6 < #7; {27}
+    if (#8) {
+      #10 <- 46; {30}
+      putchar #10; {31}
+    } else {
+      #9 <- 35; {28}
+      putchar #9; {29}
+    } {32}
+    #3 <- *espace; {21}
+    putchar #3; {22}
+    #2 <- j(+1); {19}
+    j <- #2; {20}
+  } {33}
+}
+

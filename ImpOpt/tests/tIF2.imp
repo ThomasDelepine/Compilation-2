@@ -1,0 +1,7 @@
+function main() {
+  if(2 < 1){
+  	putchar(35);
+  } else {
+      putchar(36);
+  }
+}

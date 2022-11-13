@@ -1,0 +1,29 @@
+var t_2;
+var t_1;
+var fact_0;
+
+function fun_0(param_n,closure) {
+  var var_1;
+  var t_0;
+
+  if ((param_n<=1)) {
+    var_1 = 1;
+  } else {
+    t_0 = malloc((2*4));
+    t_0[0] = (param_n-1);
+    t_0[1] = closure[1];
+    var_1 = (param_n**(closure[1]+(0*4)));
+  }
+  return(var_1);
+}
+
+main {
+  t_1 = malloc((2*4));
+  t_1[0] = fun_0;
+  t_1[1] = closure[1];
+  fact_0 = t_1;
+  t_2 = malloc((2*4));
+  t_2[0] = 6;
+  t_2[1] = fact_0;
+  print_int(fact_0(t_2));
+}

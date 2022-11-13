@@ -1,0 +1,8 @@
+var y_1;
+var x_0;
+
+main {
+  x_0 = 6;
+  y_1 = (x_0+1);
+  print_int((x_0*y_1));
+}

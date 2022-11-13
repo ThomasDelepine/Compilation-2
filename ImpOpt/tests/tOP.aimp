@@ -1,0 +1,7 @@
+function main() {
+  var #0;
+
+  #0 <- 35; {1}
+  putchar #0; {2}
+}
+
