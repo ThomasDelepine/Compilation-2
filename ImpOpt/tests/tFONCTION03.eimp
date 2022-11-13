@@ -9,52 +9,52 @@ function main {
   call f1;
   call f2;
   call f3;
-  $a2 <- *l;
-  putchar $a2;
-  $a2 <- 111;
-  *o <- $a2;
-  $a2 <- *o;
-  putchar $a2;
+  $s0 <- *l;
+  putchar $s0;
+  $s0 <- 111;
+  *o <- $s0;
+  $s0 <- *o;
+  putchar $s0;
 }
 
 function f1 {
 0 params
 0 locals
-  $a2 <- 0;
-  *h <- $a2;
-  $a2 <- 10;
-  *e <- $a2;
-  $a2 <- 20;
-  *l <- $a2;
-  $a2 <- 0;
-  *o <- $a2;
+  $s0 <- 0;
+  *h <- $s0;
+  $s0 <- 10;
+  *e <- $s0;
+  $s0 <- 20;
+  *l <- $s0;
+  $s0 <- 0;
+  *o <- $s0;
 }
 
 function f2 {
 0 params
 0 locals
-  $a3 <- *h;
-  $a2 <- *e;
-  $a2 <- $a2(*7);
-  $a2 <- $a3 + $a2;
-  $a2 <- $a2(+2);
-  *h <- $a2;
-  $a2 <- *h;
-  putchar $a2;
-  $a2 <- *e;
-  $a2 <- $a2(*10);
-  $a2 <- $a2(+1);
-  *e <- $a2;
-  $a2 <- *e;
-  putchar $a2;
+  $s1 <- *h;
+  $s0 <- *e;
+  $s0 <- $s0(*7);
+  $s0 <- $s1 + $s0;
+  $s0 <- $s0(+2);
+  *h <- $s0;
+  $s0 <- *h;
+  putchar $s0;
+  $s0 <- *e;
+  $s0 <- $s0(*10);
+  $s0 <- $s0(+1);
+  *e <- $s0;
+  $s0 <- *e;
+  putchar $s0;
 }
 
 function f3 {
 0 params
 0 locals
-  $a2 <- 108;
-  *l <- $a2;
-  $a2 <- *l;
-  putchar $a2;
+  $s0 <- 108;
+  *l <- $s0;
+  $s0 <- *l;
+  putchar $s0;
 }
 

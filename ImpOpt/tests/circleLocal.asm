@@ -12,59 +12,83 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
-	li $s2, 37
-	li $s0, 0
-	li $a2, 10
-	li $s1, 32
-	addi $a3, $s2, 1
-	slt $a3, $s0, $a3
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	li $s4, 37
+	li $s2, 0
+	li $s0, 10
+	li $s3, 32
+	addi $s1, $s4, 1
+	slt $s1, $s2, $s1
 	b __lab_2
 __lab_3:
-	li $a3, 0
-	addi $s3, $s2, 1
-	slt $s3, $a3, $s3
+	li $s1, 0
+	addi $s5, $s4, 1
+	slt $s5, $s1, $s5
 	b __lab_4
 __lab_5:
-	mul $s4, $s0, $s0
-	mul $s3, $a3, $a3
-	add $s4, $s4, $s3
-	mul $s3, $s2, $s2
-	slt $s3, $s4, $s3
-	bnez $s3, __lab_6
-	li $s3, 35
-	move $a0, $s3
+	mul $s6, $s2, $s2
+	mul $s5, $s1, $s1
+	add $s6, $s6, $s5
+	mul $s5, $s4, $s4
+	slt $s5, $s6, $s5
+	bnez $s5, __lab_6
+	li $s5, 35
+	move $a0, $s5
 	li $v0, 11
 	syscall
 	b __lab_7
 __lab_6:
-	li $s3, 46
-	move $a0, $s3
+	li $s5, 46
+	move $a0, $s5
 	li $v0, 11
 	syscall
 __lab_7:
-	move $a0, $s1
+	move $a0, $s3
 	li $v0, 11
 	syscall
-	addi $a3, $a3, 1
+	addi $s1, $s1, 1
 __lab_4:
-	addi $s3, $s2, 1
-	slt $s3, $a3, $s3
-	bnez $s3, __lab_5
-	move $a0, $a2
+	addi $s5, $s4, 1
+	slt $s5, $s1, $s5
+	bnez $s5, __lab_5
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	addi $a3, $s0, 1
-	move $s0, $a3
+	addi $s1, $s2, 1
+	move $s2, $s1
 __lab_2:
-	addi $a3, $s2, 1
-	slt $a3, $s0, $a3
-	bnez $a3, __lab_3
+	addi $s1, $s4, 1
+	slt $s1, $s2, $s1
+	bnez $s1, __lab_3
 __lab_1:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 #built-in atoi
 atoi:

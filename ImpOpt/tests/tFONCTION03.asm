@@ -12,109 +12,205 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
 	jal f1
 	jal f2
 	jal f3
-	la $a2, l
-	lw $a2, 0($a2)
-	move $a0, $a2
+	la $s0, l
+	lw $s0, 0($s0)
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	li $a2, 111
+	li $s0, 111
 	la $a1, o
-	sw $a2, 0($a1)
-	la $a2, o
-	lw $a2, 0($a2)
-	move $a0, $a2
+	sw $s0, 0($a1)
+	la $s0, o
+	lw $s0, 0($s0)
+	move $a0, $s0
 	li $v0, 11
 	syscall
 __lab_4:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 f1:
 	sw $fp, 0($sp)
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
-	li $a2, 0
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	li $s0, 0
 	la $a1, h
-	sw $a2, 0($a1)
-	li $a2, 10
+	sw $s0, 0($a1)
+	li $s0, 10
 	la $a1, e
-	sw $a2, 0($a1)
-	li $a2, 20
+	sw $s0, 0($a1)
+	li $s0, 20
 	la $a1, l
-	sw $a2, 0($a1)
-	li $a2, 0
+	sw $s0, 0($a1)
+	li $s0, 0
 	la $a1, o
-	sw $a2, 0($a1)
+	sw $s0, 0($a1)
 __lab_3:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 f2:
 	sw $fp, 0($sp)
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
-	la $a3, h
-	lw $a3, 0($a3)
-	la $a2, e
-	lw $a2, 0($a2)
-	mul $a2, $a2, 7
-	add $a2, $a3, $a2
-	addi $a2, $a2, 2
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	la $s1, h
+	lw $s1, 0($s1)
+	la $s0, e
+	lw $s0, 0($s0)
+	mul $s0, $s0, 7
+	add $s0, $s1, $s0
+	addi $s0, $s0, 2
 	la $a1, h
-	sw $a2, 0($a1)
-	la $a2, h
-	lw $a2, 0($a2)
-	move $a0, $a2
+	sw $s0, 0($a1)
+	la $s0, h
+	lw $s0, 0($s0)
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	la $a2, e
-	lw $a2, 0($a2)
-	mul $a2, $a2, 10
-	addi $a2, $a2, 1
+	la $s0, e
+	lw $s0, 0($s0)
+	mul $s0, $s0, 10
+	addi $s0, $s0, 1
 	la $a1, e
-	sw $a2, 0($a1)
-	la $a2, e
-	lw $a2, 0($a2)
-	move $a0, $a2
+	sw $s0, 0($a1)
+	la $s0, e
+	lw $s0, 0($s0)
+	move $a0, $s0
 	li $v0, 11
 	syscall
 __lab_2:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 f3:
 	sw $fp, 0($sp)
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
-	li $a2, 108
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	li $s0, 108
 	la $a1, l
-	sw $a2, 0($a1)
-	la $a2, l
-	lw $a2, 0($a2)
-	move $a0, $a2
+	sw $s0, 0($a1)
+	la $s0, l
+	lw $s0, 0($s0)
+	move $a0, $s0
 	li $v0, 11
 	syscall
 __lab_1:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 #built-in atoi
 atoi:

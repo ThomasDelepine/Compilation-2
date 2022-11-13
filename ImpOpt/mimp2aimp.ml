@@ -87,7 +87,7 @@ let tr_fdef fdef =
       (*param 1 dans a0, le reste sur la pile avec push*)
 
       (*convention simple, on push les arguments*)
-       "$v0", (List.fold_left (fun acc e -> let reg, s = tr_expr e in acc @@ s ++ (Aimp.Push reg)) Nop args) ++ Call (f, (List.length args))
+       "$v0", (List.fold_left (fun acc e -> let reg, s = tr_expr e in acc @@ s ++ (Aimp.Push reg)) Nop (List.rev args)) ++ Call (f, (List.length args))
   in
 
   let rec tr_instr = function

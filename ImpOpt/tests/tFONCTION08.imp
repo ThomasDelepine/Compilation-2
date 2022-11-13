@@ -1,0 +1,10 @@
+var espace;
+
+function main() {
+  	f(35, 36);
+}	
+
+function f(i, j) {
+  	putchar(i);
+	putchar(j);
+}

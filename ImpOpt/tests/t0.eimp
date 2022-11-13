@@ -1,7 +1,7 @@
 function main {
 0 params
 0 locals
-  $a2 <- 35;
-  putchar $a2;
+  $s0 <- 35;
+  putchar $s0;
 }
 

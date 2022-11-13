@@ -56,11 +56,11 @@ ocamlc.opt -c -bin-annot -o impparser.cmi impparser.mli # cached
 # Target: implexer.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:implexer.cmo, file:implexer.ml, implem, ocaml, quiet, traverse, use_menhir }
 ocamlc.opt -c -bin-annot -o implexer.cmo implexer.ml # cached
 # Target: mimp2aimp.ml.depends, tags: { bin_annot, explain, extension:ml, file:mimp2aimp.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
-ocamldep.opt -modules mimp2aimp.ml > mimp2aimp.ml.depends
+ocamldep.opt -modules mimp2aimp.ml > mimp2aimp.ml.depends # cached
 # Target: mimp2aimp.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:mimp2aimp.cmo, file:mimp2aimp.ml, implem, ocaml, quiet, traverse, use_menhir }
-ocamlc.opt -c -bin-annot -o mimp2aimp.cmo mimp2aimp.ml
+ocamlc.opt -c -bin-annot -o mimp2aimp.cmo mimp2aimp.ml # cached
 # Target: impc.cmo, tags: { bin_annot, byte, compile, explain, extension:cmo, extension:ml, file:impc.cmo, file:impc.ml, implem, ocaml, quiet, traverse, use_menhir }
-ocamlc.opt -c -bin-annot -o impc.cmo impc.ml
+ocamlc.opt -c -bin-annot -o impc.cmo impc.ml # cached
 # Target: aimp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:aimp.cmx, file:aimp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
 ocamlopt.opt -c -bin-annot -o aimp.cmx aimp.ml # cached
 # Target: eimp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:eimp.cmx, file:eimp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
@@ -88,9 +88,9 @@ ocamlopt.opt -c -bin-annot -o impparser.cmx impparser.ml # cached
 # Target: implexer.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:implexer.cmx, file:implexer.ml, implem, native, ocaml, quiet, traverse, use_menhir }
 ocamlopt.opt -c -bin-annot -o implexer.cmx implexer.ml # cached
 # Target: mimp2aimp.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:mimp2aimp.cmx, file:mimp2aimp.ml, implem, native, ocaml, quiet, traverse, use_menhir }
-ocamlopt.opt -c -bin-annot -o mimp2aimp.cmx mimp2aimp.ml
+ocamlopt.opt -c -bin-annot -o mimp2aimp.cmx mimp2aimp.ml # cached
 # Target: impc.cmx, tags: { bin_annot, compile, explain, extension:cmx, extension:ml, file:impc.cmx, file:impc.ml, implem, native, ocaml, quiet, traverse, use_menhir }
-ocamlopt.opt -c -bin-annot -o impc.cmx impc.ml
+ocamlopt.opt -c -bin-annot -o impc.cmx impc.ml # cached
 # Target: impc.native, tags: { bin_annot, dont_link_with, explain, extension:native, file:impc.native, link, native, ocaml, program, quiet, traverse, use_menhir }
-ocamlopt.opt aimp.cmx eimp.cmx graph.cmx register_allocation.cmx aimp2eimp.cmx mips.cmx eimp2mips.cmx imp.cmx mimp.cmx imp2mimp.cmx impparser.cmx implexer.cmx mimp2aimp.cmx impc.cmx -o impc.native
+ocamlopt.opt aimp.cmx eimp.cmx graph.cmx register_allocation.cmx aimp2eimp.cmx mips.cmx eimp2mips.cmx imp.cmx mimp.cmx imp2mimp.cmx impparser.cmx implexer.cmx mimp2aimp.cmx impc.cmx -o impc.native # cached
 # Compilation successful.

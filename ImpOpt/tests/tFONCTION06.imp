@@ -1,0 +1,11 @@
+function main() {
+	var i;
+	i = 35;
+    	f(i);
+     	i = i + 1;
+	f(i);
+}	
+
+function f(arg) {
+   	putchar(arg);
+}

@@ -10,13 +10,13 @@ function main {
 function f {
 0 params
 0 locals
-  $a2 <- 30;
-  *a <- $a2;
-  $a2 <- 5;
-  *b <- $a2;
-  $a3 <- *a;
-  $a2 <- *b;
-  $a2 <- $a3 + $a2;
-  putchar $a2;
+  $s0 <- 30;
+  *a <- $s0;
+  $s0 <- 5;
+  *b <- $s0;
+  $s1 <- *a;
+  $s0 <- *b;
+  $s0 <- $s1 + $s0;
+  putchar $s0;
 }
 

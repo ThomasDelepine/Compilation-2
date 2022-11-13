@@ -1,0 +1,58 @@
+var espace;
+
+function main() {
+  var #2;
+  var #1;
+  var #0;
+
+  #2 <- 32; {6}
+  *espace <- #2; {7}
+  #0 <- 10; {1}
+  push #0; {2}
+  #1 <- 5; {3}
+  push #1; {4}
+  call affiche_ligne (2); {5}
+}
+
+function affiche_ligne(i, n) {
+  var #11;
+  var #10;
+  var #9;
+  var #8;
+  var #7;
+  var #6;
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var j;
+
+  j <- 0; {26}
+  #0 <- n(+1); {8}
+  #1 <- j < #0; {9}
+  while (
+    #0 <- n(+1); {8}
+    #1 <- j < #0; {9}
+    #1
+  ) {
+    #4 <- i * i; {14}
+    #5 <- j * j; {15}
+    #6 <- #4 + #5; {16}
+    #7 <- n * n; {17}
+    #8 <- #6 < #7; {18}
+    if (#8) {
+      #10 <- 46; {21}
+      putchar #10; {22}
+    } else {
+      #9 <- 35; {19}
+      putchar #9; {20}
+    } {23}
+    #3 <- *espace; {12}
+    putchar #3; {13}
+    #2 <- j(+1); {10}
+    j <- #2; {11}
+  } {24}
+}
+

@@ -47,11 +47,11 @@ let tr_fdef fdef =
      du registre virtuel correspondant. *)  
   let save vr = match Graph.VMap.find vr alloc with
     | Actual r  -> Nop
-    | Stacked i -> Instr(Write(Stack(-i-2), dst_reg))
+    | Stacked i -> Instr(Write(Stack(-i), dst_reg))
   in
   let load op vr = match Graph.VMap.find vr alloc with
     | Actual r  -> Nop
-    | Stacked i -> Instr(Read(op, Stack(-i-2)))
+    | Stacked i -> Instr(Read(op, Stack(-i)))
   in
   let load1 = load op1_reg in   (*pour le premier operand*)
   let load2 = load op2_reg in   (*pour le second operand*)

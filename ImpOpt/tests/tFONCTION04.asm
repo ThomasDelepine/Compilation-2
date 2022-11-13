@@ -12,44 +12,92 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, 0
-	li $a2, 35
-	sw $a2, 0($sp)
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	li $s0, 35
+	sw $s0, 0($sp)
 	subi $sp, $sp, 4
 	jal f
 __lab_4:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 f:
 	sw $fp, 0($sp)
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	addi $fp, $sp, 8
-	addi $sp, $sp, -4
-	li $a3, 0
-	li $s0, 10
-	slt $s0, $a3, $s0
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	li $s1, 0
+	li $s2, 10
+	slt $s2, $s1, $s2
 	b __lab_2
 __lab_3:
-	addi $sp, $sp, -8
+	subi $sp, $sp, -44
 	lw $t0, 0($sp)
-	addi $sp, $sp, 8
+	subi $sp, $sp, 44
 	move $a0, $t0
 	li $v0, 11
 	syscall
-	addi $a3, $a3, 1
+	addi $s1, $s1, 1
 __lab_2:
-	li $s0, 10
-	slt $s0, $a3, $s0
-	bnez $s0, __lab_3
+	li $s2, 10
+	slt $s2, $s1, $s2
+	bnez $s2, __lab_3
 __lab_1:
+	addi $sp, $sp, 4
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $ra, 32($sp)
+	lw $fp, 36($sp)
 	move $sp, $fp
-	lw $ra, -4($fp)
-	lw $fp, 0($fp)
 	jr $ra
 #built-in atoi
 atoi:

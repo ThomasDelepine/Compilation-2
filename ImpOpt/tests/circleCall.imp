@@ -10,10 +10,10 @@ function main() {
   espace = 32;
 
   while (i < arg+1) {
-    affiche_ligne(i, arg);
-    putchar(retour);
-    i = i + 1;
-  }
+    	affiche_ligne(i, arg);
+	putchar(retour);
+    	i = i + 1;
+  	}
 }
 
 function affiche_ligne(i, n) {

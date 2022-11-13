@@ -1,0 +1,18 @@
+function main() {
+  var #0;
+  var i;
+
+  i <- 13; {6}
+  push i; {3}
+  call f (1); {4}
+  push i; {1}
+  call f (1); {2}
+}
+
+function f(i) {
+  var #0;
+
+  #0 <- i(+22); {7}
+  putchar #0; {8}
+}
+

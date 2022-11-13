@@ -23,8 +23,8 @@ function main(arg) {
     #1 <- i < #0; {2}
     #1
   ) {
-    push i; {7}
-    push arg; {8}
+    push arg; {7}
+    push i; {8}
     call affiche_ligne (2); {9}
     #3 <- *retour; {5}
     putchar #3; {6}

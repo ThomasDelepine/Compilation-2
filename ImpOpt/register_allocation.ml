@@ -589,33 +589,23 @@ let allocation (fdef: function_def): register Graph.VMap.t * int =
        ou un emplacement de pile,
      - le nombre d'emplacements de pile utilisés.
    *)
-   let k = 15 in
-   let nbParams = List.length fdef.params in
+   let k = 8 in
    let g = interference_graph fdef in
    let c = color g k in
    let cptStacked = ref 0 in
    let color2register co = 
-      if co = 0 then Actual "$a2"
-      else if co = 1 then Actual "$a3"
-      else if co = 2 then Actual "$s0"
-      else if co = 3 then Actual "$s1"
-      else if co = 4 then Actual "$s2"
-      else if co = 5 then Actual "$s3"
-      else if co = 6 then Actual "$s4"
-      else if co = 7 then Actual "$s5"
-      else if co = 8 then Actual "$s6"
-      else if co = 9 then Actual "$s7"
-      else if co = 10 then Actual "$t3"
-      else if co = 11 then Actual "$t4"
-      else if co = 12 then Actual "$t5"
-      else if co = 13 then Actual "$t6"
-      else if co = 14 then Actual "$t7"
-      else (incr cptStacked; Stacked (co - k + nbParams))
+      if co = 0 then Actual "$s0"
+      else if co = 1 then Actual "$s1"
+      else if co = 2 then Actual "$s2"
+      else if co = 3 then Actual "$s3"
+      else if co = 4 then Actual "$s4"
+      else if co = 5 then Actual "$s5"
+      else if co = 6 then Actual "$s6"
+      else if co = 7 then Actual "$s7"
+      else (incr cptStacked; Stacked (co - k))
 
    in
-   (*fonction renvoyant la position de la première apparition d'un élément dans une liste (à partir de 0), -1 sinon*)
-
    let map' =  List.fold_left 
-               (fun map (key, co) ->  VMap.add key (color2register co) map) VMap.empty (VMap.bindings c) in
-   let map', _ = List.fold_left (fun (map, n) key -> incr cptStacked; (VMap.add key (Stacked(n)) map, n + 1)) (map', 0) (fdef.params) in
+               (fun map (key, co) ->  if List.mem key fdef.params then map else VMap.add key (color2register co) map) VMap.empty (VMap.bindings c) in
+   let map', _ = List.fold_left (fun (map, n) key -> incr cptStacked; (VMap.add key (Stacked(-11 - n)) map, n + 1)) (map', 0) (fdef.params) in
    map', !cptStacked

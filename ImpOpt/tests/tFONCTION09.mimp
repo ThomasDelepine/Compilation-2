@@ -1,0 +1,12 @@
+function main() {
+  var i;
+
+  i = 13;
+  f(i);
+  f(i);
+}
+
+function f(i) {
+  putchar((i(+22)));
+}
+
