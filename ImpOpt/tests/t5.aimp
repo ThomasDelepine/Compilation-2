@@ -1,0 +1,25 @@
+var glob;
+
+function main() {
+  var #0;
+
+  #0 <- 35; {3}
+  *glob <- #0; {4}
+  call f1 (0); {2}
+  call f2 (0); {1}
+}
+
+function f1() {
+  var #0;
+
+  #0 <- 36; {5}
+  *glob <- #0; {6}
+}
+
+function f2() {
+  var #0;
+
+  #0 <- *glob; {7}
+  putchar #0; {8}
+}
+

@@ -1,0 +1,14 @@
+var glob;
+function main() {
+	glob = 35;
+	f1();
+	f2();
+}
+
+function f1(){
+	glob = 36;
+}
+
+function f2(){
+	putchar(glob);
+}

@@ -1,0 +1,79 @@
+function main() {
+  var #2;
+  var #1;
+  var #0;
+
+  #0 <- 3; {1}
+  push #0; {2}
+  #1 <- 1; {3}
+  push #1; {4}
+  call f (2); {5}
+  #2 <- $v0(+65); {6}
+  putchar #2; {7}
+}
+
+function f(m, n) {
+  var #17;
+  var #16;
+  var #15;
+  var #14;
+  var #13;
+  var #12;
+  var #11;
+  var #10;
+  var #9;
+  var #8;
+  var #7;
+  var #6;
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var a0;
+  var a1;
+  var a2;
+  var a3;
+  var a4;
+  var a5;
+  var a6;
+  var a7;
+  var a8;
+  var a9;
+  var a10;
+  var a11;
+  var a12;
+  var a13;
+  var a14;
+
+  a0 <- 0; {48}
+  a1 <- 1; {46}
+  a2 <- 2; {44}
+  a3 <- 3; {42}
+  a4 <- 4; {40}
+  a5 <- 5; {38}
+  a6 <- 6; {36}
+  a7 <- 7; {34}
+  a8 <- 8; {32}
+  a9 <- 9; {30}
+  a10 <- 10; {28}
+  a11 <- 11; {26}
+  a12 <- 12; {24}
+  a13 <- 13; {22}
+  a14 <- 14; {20}
+  #0 <- m < n; {8}
+  if (#0) {
+    push n; {12}
+    #2 <- a2 * m; {13}
+    push #2; {14}
+    call f (2); {15}
+    $v0 <- $v0; {16}
+    return; {17}
+  } else {
+    #1 <- a2 * m; {9}
+    $v0 <- #1; {10}
+    return; {11}
+  } {18}
+}
+

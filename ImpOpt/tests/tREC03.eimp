@@ -1,0 +1,50 @@
+function main {
+0 params
+0 locals
+  $s0 <- 3;
+  push $s0;
+  $s0 <- 1;
+  push $s0;
+  call f;
+  $s0 <- $v0(+65);
+  putchar $s0;
+}
+
+function f {
+2 params
+2 locals
+  $s1 <- 0;
+  $s1 <- 1;
+  $s2 <- 2;
+  $s1 <- 3;
+  $s1 <- 4;
+  $s1 <- 5;
+  $s1 <- 6;
+  $s1 <- 7;
+  $s1 <- 8;
+  $s1 <- 9;
+  $s1 <- 10;
+  $s1 <- 11;
+  $s1 <- 12;
+  $s1 <- 13;
+  $s1 <- 14;
+  $t0 <- *{12};
+  $t1 <- *{13};
+  $s1 <- $t0 < $t1;
+  if ($s1) {
+    $t0 <- *{13};
+    push $t0;
+    $t1 <- *{12};
+    $s1 <- $s2 * $t1;
+    push $s1;
+    call f;
+    $v0 <- $v0;
+    return;
+  } else {
+    $t1 <- *{12};
+    $s1 <- $s2 * $t1;
+    $v0 <- $s1;
+    return;
+  }
+}
+

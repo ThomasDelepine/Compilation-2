@@ -1,0 +1,54 @@
+function main {
+0 params
+0 locals
+  $s0 <- 0;
+  $s1 <- 6;
+  $s1 <- $s0 < $s1;
+  while (
+    $s1 <- 6;
+    $s1 <- $s0 < $s1;
+    $s1
+  ) {
+    $s1 <- 1;
+    push $s1;
+    $s1 <- 0;
+    push $s1;
+    $s1 <- 0;
+    push $s1;
+    push $s0;
+    call fibo;
+    $s1 <- $v0(+65);
+    putchar $s1;
+    $s0 <- $s0(+1);
+    $s0 <- $s0;
+  }
+}
+
+function fibo {
+4 params
+4 locals
+  $t0 <- *{13};
+  $t1 <- *{12};
+  $s2 <- $t0 < $t1;
+  if ($s2) {
+    $t0 <- *{14};
+    $t1 <- *{15};
+    $s2 <- $t0 + $t1;
+    push $s2;
+    $t0 <- *{15};
+    push $t0;
+    $t0 <- *{13};
+    $s2 <- $t0(+1);
+    push $s2;
+    $t0 <- *{12};
+    push $t0;
+    call fibo;
+    $v0 <- $v0;
+    return;
+  } else {
+    $t0 <- *{14};
+    $v0 <- $t0;
+    return;
+  }
+}
+

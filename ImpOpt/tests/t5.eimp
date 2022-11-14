@@ -1,0 +1,25 @@
+var glob;
+
+function main {
+0 params
+0 locals
+  $s0 <- 35;
+  *glob <- $s0;
+  call f1;
+  call f2;
+}
+
+function f1 {
+0 params
+0 locals
+  $s0 <- 36;
+  *glob <- $s0;
+}
+
+function f2 {
+0 params
+0 locals
+  $s0 <- *glob;
+  putchar $s0;
+}
+

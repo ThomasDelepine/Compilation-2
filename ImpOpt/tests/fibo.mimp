@@ -1,0 +1,18 @@
+function main() {
+  var i;
+
+  i = 0;
+  while ((i < 6)) {
+    putchar((fibo(i, 0, 0, 1)(+65)));
+    i = (i(+1));
+  }
+}
+
+function fibo(n, cpt, a, b) {
+  if ((cpt < n)) {
+    return(fibo(n, (cpt(+1)), b, (a + b)));
+  } else {
+    return(a);
+  }
+}
+
