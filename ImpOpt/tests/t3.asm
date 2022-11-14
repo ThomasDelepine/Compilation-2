@@ -12,309 +12,321 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	move $s0, $t2
-	move $s1, $t3
-	move $s2, $t4
-	move $s3, $t5
-	move $s4, $t6
-	move $s5, $t7
-	move $s6, $t8
-	move $s7, $t9
+	sw $gp, 0($sp)
+	subi $sp, $sp, 4
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
 	move $fp, $sp
-	li $t9, 0
+	move $gp, $sp
+	li $s7, 0
 	li $t0, 1
-	subi $sp, $sp, 0
-	sw $t0, 0($sp)
-	subi $sp, $sp, 0
+	subi $gp, $gp, 0
+	sw $t0, 0($gp)
+	subi $gp, $gp, 0
 	li $t0, 2
-	subi $sp, $sp, 4
-	sw $t0, 0($sp)
-	subi $sp, $sp, -4
-	li $t8, 3
-	li $t7, 4
-	li $t6, 5
-	li $t5, 6
-	li $t4, 7
-	li $t3, 8
-	li $t2, 9
+	subi $gp, $gp, 4
+	sw $t0, 0($gp)
+	subi $gp, $gp, -4
+	li $s6, 3
+	li $s5, 4
+	li $s4, 5
+	li $s3, 6
+	li $s2, 7
+	li $s1, 8
+	li $s0, 9
 	li $t0, 10
-	subi $sp, $sp, 36
-	sw $t0, 0($sp)
-	subi $sp, $sp, -36
+	subi $gp, $gp, 36
+	sw $t0, 0($gp)
+	subi $gp, $gp, -36
 	li $t0, 11
-	subi $sp, $sp, 40
-	sw $t0, 0($sp)
-	subi $sp, $sp, -40
+	subi $gp, $gp, 40
+	sw $t0, 0($gp)
+	subi $gp, $gp, -40
 	li $t0, 12
-	subi $sp, $sp, 44
-	sw $t0, 0($sp)
-	subi $sp, $sp, -44
+	subi $gp, $gp, 44
+	sw $t0, 0($gp)
+	subi $gp, $gp, -44
 	li $t0, 13
-	subi $sp, $sp, 48
-	sw $t0, 0($sp)
-	subi $sp, $sp, -48
+	subi $gp, $gp, 48
+	sw $t0, 0($gp)
+	subi $gp, $gp, -48
 	li $t0, 14
-	subi $sp, $sp, 52
-	sw $t0, 0($sp)
-	subi $sp, $sp, -52
+	subi $gp, $gp, 52
+	sw $t0, 0($gp)
+	subi $gp, $gp, -52
 	li $t0, 15
-	subi $sp, $sp, 56
-	sw $t0, 0($sp)
-	subi $sp, $sp, -56
+	subi $gp, $gp, 56
+	sw $t0, 0($gp)
+	subi $gp, $gp, -56
 	li $t0, 16
-	subi $sp, $sp, 60
-	sw $t0, 0($sp)
-	subi $sp, $sp, -60
+	subi $gp, $gp, 60
+	sw $t0, 0($gp)
+	subi $gp, $gp, -60
 	li $t0, 17
-	subi $sp, $sp, 64
-	sw $t0, 0($sp)
-	subi $sp, $sp, -64
+	subi $gp, $gp, 64
+	sw $t0, 0($gp)
+	subi $gp, $gp, -64
 	li $t0, 18
-	subi $sp, $sp, 68
-	sw $t0, 0($sp)
-	subi $sp, $sp, -68
+	subi $gp, $gp, 68
+	sw $t0, 0($gp)
+	subi $gp, $gp, -68
 	li $t0, 19
-	subi $sp, $sp, 72
-	sw $t0, 0($sp)
-	subi $sp, $sp, -72
+	subi $gp, $gp, 72
+	sw $t0, 0($gp)
+	subi $gp, $gp, -72
 	li $t0, 20
-	subi $sp, $sp, 76
-	sw $t0, 0($sp)
-	subi $sp, $sp, -76
+	subi $gp, $gp, 76
+	sw $t0, 0($gp)
+	subi $gp, $gp, -76
 	li $t0, 21
-	subi $sp, $sp, 80
-	sw $t0, 0($sp)
-	subi $sp, $sp, -80
+	subi $gp, $gp, 80
+	sw $t0, 0($gp)
+	subi $gp, $gp, -80
 	li $t0, 22
-	subi $sp, $sp, 84
-	sw $t0, 0($sp)
-	subi $sp, $sp, -84
+	subi $gp, $gp, 84
+	sw $t0, 0($gp)
+	subi $gp, $gp, -84
 	li $t0, 23
-	subi $sp, $sp, 32
-	sw $t0, 0($sp)
-	subi $sp, $sp, -32
+	subi $gp, $gp, 32
+	sw $t0, 0($gp)
+	subi $gp, $gp, -32
 	li $t0, 24
-	subi $sp, $sp, 28
-	sw $t0, 0($sp)
-	subi $sp, $sp, -28
+	subi $gp, $gp, 28
+	sw $t0, 0($gp)
+	subi $gp, $gp, -28
 	li $t0, 25
-	subi $sp, $sp, 24
-	sw $t0, 0($sp)
-	subi $sp, $sp, -24
+	subi $gp, $gp, 24
+	sw $t0, 0($gp)
+	subi $gp, $gp, -24
 	li $t0, 26
-	subi $sp, $sp, 20
-	sw $t0, 0($sp)
-	subi $sp, $sp, -20
+	subi $gp, $gp, 20
+	sw $t0, 0($gp)
+	subi $gp, $gp, -20
 	li $t0, 27
-	subi $sp, $sp, 16
-	sw $t0, 0($sp)
-	subi $sp, $sp, -16
+	subi $gp, $gp, 16
+	sw $t0, 0($gp)
+	subi $gp, $gp, -16
 	li $t0, 28
-	subi $sp, $sp, 12
-	sw $t0, 0($sp)
-	subi $sp, $sp, -12
+	subi $gp, $gp, 12
+	sw $t0, 0($gp)
+	subi $gp, $gp, -12
 	li $t0, 29
-	subi $sp, $sp, 8
-	sw $t0, 0($sp)
-	subi $sp, $sp, -8
-	addi $t9, $t9, 65
-	move $a0, $t9
+	subi $gp, $gp, 8
+	sw $t0, 0($gp)
+	subi $gp, $gp, -8
+	addi $s7, $s7, 65
+	move $a0, $s7
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 0
-	lw $t0, 0($sp)
-	subi $sp, $sp, 0
-	addi $t9, $t0, 65
-	move $a0, $t9
+	subi $gp, $gp, 0
+	lw $t0, 0($gp)
+	subi $gp, $gp, 0
+	addi $s7, $t0, 65
+	move $a0, $s7
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 4
-	lw $t0, 0($sp)
-	subi $sp, $sp, -4
-	addi $t9, $t0, 65
-	move $a0, $t9
+	subi $gp, $gp, 4
+	lw $t0, 0($gp)
+	subi $gp, $gp, -4
+	addi $s7, $t0, 65
+	move $a0, $s7
 	li $v0, 11
 	syscall
-	addi $t8, $t8, 65
-	move $a0, $t8
+	addi $s6, $s6, 65
+	move $a0, $s6
 	li $v0, 11
 	syscall
-	addi $t7, $t7, 65
-	move $a0, $t7
+	addi $s5, $s5, 65
+	move $a0, $s5
 	li $v0, 11
 	syscall
-	addi $t6, $t6, 65
-	move $a0, $t6
+	addi $s4, $s4, 65
+	move $a0, $s4
 	li $v0, 11
 	syscall
-	addi $t5, $t5, 65
-	move $a0, $t5
+	addi $s3, $s3, 65
+	move $a0, $s3
 	li $v0, 11
 	syscall
-	addi $t4, $t4, 65
-	move $a0, $t4
+	addi $s2, $s2, 65
+	move $a0, $s2
 	li $v0, 11
 	syscall
-	addi $t3, $t3, 65
-	move $a0, $t3
+	addi $s1, $s1, 65
+	move $a0, $s1
 	li $v0, 11
 	syscall
-	addi $t2, $t2, 65
-	move $a0, $t2
+	addi $s0, $s0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 36
-	lw $t0, 0($sp)
-	subi $sp, $sp, -36
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 36
+	lw $t0, 0($gp)
+	subi $gp, $gp, -36
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 40
-	lw $t0, 0($sp)
-	subi $sp, $sp, -40
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 40
+	lw $t0, 0($gp)
+	subi $gp, $gp, -40
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 44
-	lw $t0, 0($sp)
-	subi $sp, $sp, -44
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 44
+	lw $t0, 0($gp)
+	subi $gp, $gp, -44
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 48
-	lw $t0, 0($sp)
-	subi $sp, $sp, -48
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 48
+	lw $t0, 0($gp)
+	subi $gp, $gp, -48
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 52
-	lw $t0, 0($sp)
-	subi $sp, $sp, -52
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 52
+	lw $t0, 0($gp)
+	subi $gp, $gp, -52
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 56
-	lw $t0, 0($sp)
-	subi $sp, $sp, -56
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 56
+	lw $t0, 0($gp)
+	subi $gp, $gp, -56
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 60
-	lw $t0, 0($sp)
-	subi $sp, $sp, -60
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 60
+	lw $t0, 0($gp)
+	subi $gp, $gp, -60
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 64
-	lw $t0, 0($sp)
-	subi $sp, $sp, -64
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 64
+	lw $t0, 0($gp)
+	subi $gp, $gp, -64
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 68
-	lw $t0, 0($sp)
-	subi $sp, $sp, -68
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 68
+	lw $t0, 0($gp)
+	subi $gp, $gp, -68
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 72
-	lw $t0, 0($sp)
-	subi $sp, $sp, -72
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 72
+	lw $t0, 0($gp)
+	subi $gp, $gp, -72
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 76
-	lw $t0, 0($sp)
-	subi $sp, $sp, -76
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 76
+	lw $t0, 0($gp)
+	subi $gp, $gp, -76
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 80
-	lw $t0, 0($sp)
-	subi $sp, $sp, -80
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 80
+	lw $t0, 0($gp)
+	subi $gp, $gp, -80
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 84
-	lw $t0, 0($sp)
-	subi $sp, $sp, -84
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 84
+	lw $t0, 0($gp)
+	subi $gp, $gp, -84
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 32
-	lw $t0, 0($sp)
-	subi $sp, $sp, -32
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 32
+	lw $t0, 0($gp)
+	subi $gp, $gp, -32
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 28
-	lw $t0, 0($sp)
-	subi $sp, $sp, -28
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 28
+	lw $t0, 0($gp)
+	subi $gp, $gp, -28
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 24
-	lw $t0, 0($sp)
-	subi $sp, $sp, -24
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 24
+	lw $t0, 0($gp)
+	subi $gp, $gp, -24
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 20
-	lw $t0, 0($sp)
-	subi $sp, $sp, -20
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 20
+	lw $t0, 0($gp)
+	subi $gp, $gp, -20
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 16
-	lw $t0, 0($sp)
-	subi $sp, $sp, -16
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 16
+	lw $t0, 0($gp)
+	subi $gp, $gp, -16
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 12
-	lw $t0, 0($sp)
-	subi $sp, $sp, -12
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 12
+	lw $t0, 0($gp)
+	subi $gp, $gp, -12
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
-	subi $sp, $sp, 8
-	lw $t0, 0($sp)
-	subi $sp, $sp, -8
-	addi $t2, $t0, 65
-	move $a0, $t2
+	subi $gp, $gp, 8
+	lw $t0, 0($gp)
+	subi $gp, $gp, -8
+	addi $s0, $t0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
 __lab_1:
 	addi $sp, $sp, 4
-	move $t2, $s0
-	move $t3, $s1
-	move $t4, $s2
-	move $t5, $s3
-	move $t6, $s4
-	move $t7, $s5
-	move $t8, $s6
-	move $t9, $s7
-	lw $ra, 0($sp)
-	lw $fp, 4($sp)
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $gp, 32($sp)
+	lw $ra, 36($sp)
+	lw $fp, 40($sp)
 	move $sp, $fp
 	jr $ra
 #built-in atoi

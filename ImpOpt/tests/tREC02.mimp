@@ -1,5 +1,5 @@
 function main() {
-  putchar(somme(0, 10));
+  putchar((somme(8, 10)(+65)));
 }
 
 function somme(cpt, max) {

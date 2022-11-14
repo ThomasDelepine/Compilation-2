@@ -12,37 +12,50 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	move $s0, $t2
-	move $s1, $t3
-	move $s2, $t4
-	move $s3, $t5
-	move $s4, $t6
-	move $s5, $t7
-	move $s6, $t8
-	move $s7, $t9
-	move $fp, $sp
-	li $t2, 10
-	sw $t2, 0($sp)
+	sw $gp, 0($sp)
 	subi $sp, $sp, 4
-	li $t2, 0
-	sw $t2, 0($sp)
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
+	move $fp, $sp
+	move $gp, $sp
+	li $s0, 10
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	li $s0, 8
+	sw $s0, 0($sp)
 	subi $sp, $sp, 4
 	jal somme
-	move $a0, $v0
+	addi $s0, $v0, 65
+	move $a0, $s0
 	li $v0, 11
 	syscall
 __lab_4:
 	addi $sp, $sp, 4
-	move $t2, $s0
-	move $t3, $s1
-	move $t4, $s2
-	move $t5, $s3
-	move $t6, $s4
-	move $t7, $s5
-	move $t8, $s6
-	move $t9, $s7
-	lw $ra, 0($sp)
-	lw $fp, 4($sp)
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $gp, 32($sp)
+	lw $ra, 36($sp)
+	lw $fp, 40($sp)
 	move $sp, $fp
 	jr $ra
 somme:
@@ -50,61 +63,73 @@ somme:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	move $s0, $t2
-	move $s1, $t3
-	move $s2, $t4
-	move $s3, $t5
-	move $s4, $t6
-	move $s5, $t7
-	move $s6, $t8
-	move $s7, $t9
+	sw $gp, 0($sp)
+	subi $sp, $sp, 4
+	sw $s0, 0($sp)
+	subi $sp, $sp, 4
+	sw $s1, 0($sp)
+	subi $sp, $sp, 4
+	sw $s2, 0($sp)
+	subi $sp, $sp, 4
+	sw $s3, 0($sp)
+	subi $sp, $sp, 4
+	sw $s4, 0($sp)
+	subi $sp, $sp, 4
+	sw $s5, 0($sp)
+	subi $sp, $sp, 4
+	sw $s6, 0($sp)
+	subi $sp, $sp, 4
+	sw $s7, 0($sp)
+	subi $sp, $sp, 4
 	move $fp, $sp
-	subi $sp, $sp, -12
-	lw $t0, 0($sp)
-	subi $sp, $sp, 12
-	subi $sp, $sp, -16
-	lw $t1, 0($sp)
-	subi $sp, $sp, 16
-	slt $t4, $t0, $t1
-	bnez $t4, __lab_2
-	subi $sp, $sp, -16
-	lw $t0, 0($sp)
-	subi $sp, $sp, 16
+	move $gp, $sp
+	subi $gp, $gp, -48
+	lw $t0, 0($gp)
+	subi $gp, $gp, 48
+	subi $gp, $gp, -52
+	lw $t1, 0($gp)
+	subi $gp, $gp, 52
+	slt $s2, $t0, $t1
+	bnez $s2, __lab_2
+	subi $gp, $gp, -52
+	lw $t0, 0($gp)
+	subi $gp, $gp, 52
 	move $v0, $t0
 	b __lab_1
 	b __lab_3
 __lab_2:
-	subi $sp, $sp, -16
-	lw $t0, 0($sp)
-	subi $sp, $sp, 16
+	subi $gp, $gp, -52
+	lw $t0, 0($gp)
+	subi $gp, $gp, 52
 	sw $t0, 0($sp)
 	subi $sp, $sp, 4
-	subi $sp, $sp, -12
-	lw $t0, 0($sp)
-	subi $sp, $sp, 12
-	addi $t4, $t0, 1
-	sw $t4, 0($sp)
+	subi $gp, $gp, -48
+	lw $t0, 0($gp)
+	subi $gp, $gp, 48
+	addi $s2, $t0, 1
+	sw $s2, 0($sp)
 	subi $sp, $sp, 4
 	jal somme
-	subi $sp, $sp, -12
-	lw $t0, 0($sp)
-	subi $sp, $sp, 12
-	add $t2, $t0, $v0
-	move $v0, $t2
+	subi $gp, $gp, -48
+	lw $t0, 0($gp)
+	subi $gp, $gp, 48
+	add $s0, $t0, $v0
+	move $v0, $s0
 	b __lab_1
 __lab_3:
 __lab_1:
 	addi $sp, $sp, 4
-	move $t2, $s0
-	move $t3, $s1
-	move $t4, $s2
-	move $t5, $s3
-	move $t6, $s4
-	move $t7, $s5
-	move $t8, $s6
-	move $t9, $s7
-	lw $ra, 0($sp)
-	lw $fp, 4($sp)
+	lw $s7, 0($sp)
+	lw $s6, 4($sp)
+	lw $s5, 8($sp)
+	lw $s4, 12($sp)
+	lw $s3, 16($sp)
+	lw $s2, 20($sp)
+	lw $s1, 24($sp)
+	lw $s0, 28($sp)
+	lw $gp, 32($sp)
+	lw $ra, 36($sp)
+	lw $fp, 40($sp)
 	move $sp, $fp
 	jr $ra
 #built-in atoi

@@ -13,10 +13,10 @@ let tr_fdef fdef =
     | Putchar r          -> move a0 r @@ li v0 11 @@ syscall
 
     | Read(rd, Global x) -> la rd x @@ lw rd 0 rd
-    | Read(rd, Stack i)  -> subi sp sp (-4*i) @@ lw rd 0 sp @@ subi sp sp (4*i)
+    | Read(rd, Stack i)  -> subi gp gp (-4*i) @@ lw rd 0 gp @@ subi gp gp (4*i)
 
     | Write(Global x, r) -> la a1 x @@ sw r 0 a1
-    | Write(Stack i, r)  -> subi sp sp (-4*i) @@ sw r 0 sp @@ subi sp sp (4*i)
+    | Write(Stack i, r)  -> subi gp gp (-4*i) @@ sw r 0 gp @@ subi gp gp (4*i)
 
     | Move(rd, r)        -> if rd = r then Nop else move rd r
 
@@ -71,29 +71,32 @@ let tr_fdef fdef =
   (* code de la fonction *)
   push fp
   @@ push ra
-  @@ move s0 t2
-  @@ move s1 t3
-  @@ move s2 t4
-  @@ move s3 t5
-  @@ move s4 t6
-  @@ move s5 t7
-  @@ move s6 t8
-  @@ move s7 t9
+  @@ push gp
+  @@ push s0
+  @@ push s1
+  @@ push s2
+  @@ push s3
+  @@ push s4
+  @@ push s5
+  @@ push s6
+  @@ push s7
   @@ move fp sp
+  @@ move gp sp
   @@ tr_seq fdef.code
   @@ label return_label
   (* Restaurations des s_*)
   @@ addi sp sp 4
-  @@ move t2 s0
-  @@ move t3 s1
-  @@ move t4 s2
-  @@ move t5 s3
-  @@ move t6 s4
-  @@ move t7 s5
-  @@ move t8 s6
-  @@ move t9 s7   
-  @@ lw ra 0 sp   (* Récupération de l'adresse de retour *)
-  @@ lw fp 4 sp   (* Restauration du pointeur de base de l'appelant *)
+  @@ lw s7 0 sp
+  @@ lw s6 (4) sp
+  @@ lw s5 (8) sp
+  @@ lw s4 (12) sp
+  @@ lw s3 (16) sp
+  @@ lw s2 (20) sp
+  @@ lw s1 (24) sp
+  @@ lw s0 (28) sp
+  @@ lw gp (32) sp   
+  @@ lw ra (36) sp   (* Récupération de l'adresse de retour *)
+  @@ lw fp (40) sp   (* Restauration du pointeur de base de l'appelant *)
   @@ move sp fp       (* Mose à jour du début de la pile *)
   @@ jr ra
 

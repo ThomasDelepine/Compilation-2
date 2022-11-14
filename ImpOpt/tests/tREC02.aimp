@@ -1,13 +1,15 @@
 function main() {
+  var #2;
   var #1;
   var #0;
 
   #0 <- 10; {1}
   push #0; {2}
-  #1 <- 0; {3}
+  #1 <- 8; {3}
   push #1; {4}
   call somme (2); {5}
-  putchar $v0; {6}
+  #2 <- $v0(+65); {6}
+  putchar #2; {7}
 }
 
 function somme(cpt, max) {
@@ -15,18 +17,18 @@ function somme(cpt, max) {
   var #1;
   var #0;
 
-  #0 <- cpt < max; {7}
+  #0 <- cpt < max; {8}
   if (#0) {
-    push max; {10}
-    #1 <- cpt(+1); {11}
-    push #1; {12}
-    call somme (2); {13}
-    #2 <- cpt + $v0; {14}
-    $v0 <- #2; {15}
-    return; {16}
+    push max; {11}
+    #1 <- cpt(+1); {12}
+    push #1; {13}
+    call somme (2); {14}
+    #2 <- cpt + $v0; {15}
+    $v0 <- #2; {16}
+    return; {17}
   } else {
-    $v0 <- max; {8}
-    return; {9}
-  } {17}
+    $v0 <- max; {9}
+    return; {10}
+  } {18}
 }
 
