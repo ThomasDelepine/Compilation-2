@@ -12,25 +12,17 @@ main:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	sw $s0, 0($sp)
-	subi $sp, $sp, 4
-	sw $s1, 0($sp)
-	subi $sp, $sp, 4
-	sw $s2, 0($sp)
-	subi $sp, $sp, 4
-	sw $s3, 0($sp)
-	subi $sp, $sp, 4
-	sw $s4, 0($sp)
-	subi $sp, $sp, 4
-	sw $s5, 0($sp)
-	subi $sp, $sp, 4
-	sw $s6, 0($sp)
-	subi $sp, $sp, 4
-	sw $s7, 0($sp)
-	subi $sp, $sp, 4
+	move $s0, $t2
+	move $s1, $t3
+	move $s2, $t4
+	move $s3, $t5
+	move $s4, $t6
+	move $s5, $t7
+	move $s6, $t8
+	move $s7, $t9
 	move $fp, $sp
-	li $s0, 35
-	sw $s0, 0($sp)
+	li $t2, 35
+	sw $t2, 0($sp)
 	subi $sp, $sp, 4
 	jal f
 	move $a0, $v0
@@ -38,16 +30,16 @@ main:
 	syscall
 __lab_2:
 	addi $sp, $sp, 4
-	lw $s7, 0($sp)
-	lw $s6, 4($sp)
-	lw $s5, 8($sp)
-	lw $s4, 12($sp)
-	lw $s3, 16($sp)
-	lw $s2, 20($sp)
-	lw $s1, 24($sp)
-	lw $s0, 28($sp)
-	lw $ra, 32($sp)
-	lw $fp, 36($sp)
+	move $t2, $s0
+	move $t3, $s1
+	move $t4, $s2
+	move $t5, $s3
+	move $t6, $s4
+	move $t7, $s5
+	move $t8, $s6
+	move $t9, $s7
+	lw $ra, 0($sp)
+	lw $fp, 4($sp)
 	move $sp, $fp
 	jr $ra
 f:
@@ -55,40 +47,32 @@ f:
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	subi $sp, $sp, 4
-	sw $s0, 0($sp)
-	subi $sp, $sp, 4
-	sw $s1, 0($sp)
-	subi $sp, $sp, 4
-	sw $s2, 0($sp)
-	subi $sp, $sp, 4
-	sw $s3, 0($sp)
-	subi $sp, $sp, 4
-	sw $s4, 0($sp)
-	subi $sp, $sp, 4
-	sw $s5, 0($sp)
-	subi $sp, $sp, 4
-	sw $s6, 0($sp)
-	subi $sp, $sp, 4
-	sw $s7, 0($sp)
-	subi $sp, $sp, 4
+	move $s0, $t2
+	move $s1, $t3
+	move $s2, $t4
+	move $s3, $t5
+	move $s4, $t6
+	move $s5, $t7
+	move $s6, $t8
+	move $s7, $t9
 	move $fp, $sp
-	subi $sp, $sp, -44
+	subi $sp, $sp, -12
 	lw $t0, 0($sp)
-	subi $sp, $sp, 44
+	subi $sp, $sp, 12
 	move $v0, $t0
 	b __lab_1
 __lab_1:
 	addi $sp, $sp, 4
-	lw $s7, 0($sp)
-	lw $s6, 4($sp)
-	lw $s5, 8($sp)
-	lw $s4, 12($sp)
-	lw $s3, 16($sp)
-	lw $s2, 20($sp)
-	lw $s1, 24($sp)
-	lw $s0, 28($sp)
-	lw $ra, 32($sp)
-	lw $fp, 36($sp)
+	move $t2, $s0
+	move $t3, $s1
+	move $t4, $s2
+	move $t5, $s3
+	move $t6, $s4
+	move $t7, $s5
+	move $t8, $s6
+	move $t9, $s7
+	lw $ra, 0($sp)
+	lw $fp, 4($sp)
 	move $sp, $fp
 	jr $ra
 #built-in atoi

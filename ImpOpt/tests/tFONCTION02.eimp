@@ -4,19 +4,19 @@ var b;
 function main {
 0 params
 0 locals
-  $s0 <- 30;
-  *a <- $s0;
-  $s0 <- 5;
-  *b <- $s0;
+  $t2 <- 30;
+  *a <- $t2;
+  $t2 <- 5;
+  *b <- $t2;
   call f;
 }
 
 function f {
 0 params
 0 locals
-  $s1 <- *a;
-  $s0 <- *b;
-  $s0 <- $s1 + $s0;
-  putchar $s0;
+  $t3 <- *a;
+  $t2 <- *b;
+  $t2 <- $t3 + $t2;
+  putchar $t2;
 }
 

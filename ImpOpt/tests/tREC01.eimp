@@ -1,26 +1,26 @@
 function main {
 0 params
 0 locals
-  $s0 <- 7;
-  push $s0;
+  $t2 <- 7;
+  push $t2;
   call f;
 }
 
 function f {
 1 params
 1 locals
-  $s1 <- 10;
-  $t0 <- *{11};
-  $s0 <- $t0 < $s1;
-  if ($s0) {
-    $s0 <- 35;
-    putchar $s0;
-    $s0 <- 100;
-    push $s0;
+  $t3 <- 10;
+  $t0 <- *{3};
+  $t2 <- $t0 < $t3;
+  if ($t2) {
+    $t2 <- 35;
+    putchar $t2;
+    $t2 <- 100;
+    push $t2;
     call f;
   } else {
-    $s0 <- 36;
-    putchar $s0;
+    $t2 <- 36;
+    putchar $t2;
   }
 }
 

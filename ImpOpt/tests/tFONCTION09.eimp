@@ -1,18 +1,18 @@
 function main {
 0 params
 0 locals
-  $s0 <- 13;
-  push $s0;
+  $t2 <- 13;
+  push $t2;
   call f;
-  push $s0;
+  push $t2;
   call f;
 }
 
 function f {
 1 params
 1 locals
-  $t0 <- *{11};
-  $s0 <- $t0(+22);
-  putchar $s0;
+  $t0 <- *{3};
+  $t2 <- $t0(+22);
+  putchar $t2;
 }
 

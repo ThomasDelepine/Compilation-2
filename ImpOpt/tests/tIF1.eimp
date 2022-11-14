@@ -1,15 +1,15 @@
 function main {
 0 params
 0 locals
-  $s1 <- 1;
-  $s0 <- 2;
-  $s0 <- $s1 < $s0;
-  if ($s0) {
-    $s0 <- 35;
-    putchar $s0;
+  $t3 <- 1;
+  $t2 <- 2;
+  $t2 <- $t3 < $t2;
+  if ($t2) {
+    $t2 <- 35;
+    putchar $t2;
   } else {
-    $s0 <- 36;
-    putchar $s0;
+    $t2 <- 36;
+    putchar $t2;
   }
 }
 

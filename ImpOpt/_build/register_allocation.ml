@@ -594,19 +594,19 @@ let allocation (fdef: function_def): register Graph.VMap.t * int =
    let c = color g k in
    let cptStacked = ref 0 in
    let color2register co = 
-      if co = 0 then Actual "$s0"
-      else if co = 1 then Actual "$s1"
-      else if co = 2 then Actual "$s2"
-      else if co = 3 then Actual "$s3"
-      else if co = 4 then Actual "$s4"
-      else if co = 5 then Actual "$s5"
-      else if co = 6 then Actual "$s6"
-      else if co = 7 then Actual "$s7"
-      else (incr cptStacked; Stacked (co - k))
+      if co = 0 then Actual "$t2"
+      else if co = 1 then Actual "$t3"
+      else if co = 2 then Actual "$t4"
+      else if co = 3 then Actual "$t5"
+      else if co = 4 then Actual "$t6"
+      else if co = 5 then Actual "$t7"
+      else if co = 6 then Actual "$t8"
+      else if co = 7 then Actual "$t9"
+      else (incr cptStacked; Stacked (co - k + (List.length fdef.params)))
 
    in
    let map' =  List.fold_left 
                (fun map (key, co) ->  if List.mem key fdef.params then map else VMap.add key (color2register co) map) VMap.empty (VMap.bindings c) in
-   let map', _ = List.fold_left (fun (map, n) key -> incr cptStacked; (VMap.add key (Stacked(-11 - n)) map, n + 1)) (map', 0) (fdef.params) in
+   let map', _ = List.fold_left (fun (map, n) key -> incr cptStacked; (VMap.add key (Stacked(-3 - n)) map, n + 1)) (map', 0) (fdef.params) in
    let map' = VMap.add "$v0" (Actual "$v0") map' in
    map', !cptStacked

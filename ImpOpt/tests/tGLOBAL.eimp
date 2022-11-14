@@ -3,9 +3,9 @@ var i;
 function main {
 0 params
 0 locals
-  $s0 <- 35;
-  *i <- $s0;
-  $s0 <- *i;
-  putchar $s0;
+  $t2 <- 35;
+  *i <- $t2;
+  $t2 <- *i;
+  putchar $t2;
 }
 

@@ -45,11 +45,11 @@ let tr_fdef fdef =
   (* Renvoie l'éventuelle instruction nécessaire pour sauvegarder un résultat
      ou aller chercher un opérande dans la pile, en fonction de la réalisation
      du registre virtuel correspondant. *)  
-  let save vr = print_string "save ; "; print_string vr; print_string "\n"; match Graph.VMap.find vr alloc with
+  let save vr = match Graph.VMap.find vr alloc with
     | Actual r  -> Nop
     | Stacked i -> Instr(Write(Stack(-i), dst_reg))
   in
-  let load op vr = print_string "load ; "; print_string vr; print_string "\n"; match Graph.VMap.find vr alloc with
+  let load op vr = match Graph.VMap.find vr alloc with
     | Actual r  -> Nop
     | Stacked i -> Instr(Read(op, Stack(-i)))
   in
@@ -59,7 +59,7 @@ let tr_fdef fdef =
      aller chercher un opérande, selon que le registre virtuel correspondant a
      été réalisé par un registre physique ou dans la pile. Dans ce dernier cas,
      le registre sera l'un des deux registres dédiés $t0 ou $t1. *)
-  let reg op vr = print_string "reg ; "; print_string vr; print_string "\n"; match Graph.VMap.find vr alloc with
+  let reg op vr = match Graph.VMap.find vr alloc with
     | Actual r  -> r
     | Stacked i -> op
   in

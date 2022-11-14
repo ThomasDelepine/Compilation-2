@@ -71,29 +71,29 @@ let tr_fdef fdef =
   (* code de la fonction *)
   push fp
   @@ push ra
-  @@ push s0
-  @@ push s1
-  @@ push s2
-  @@ push s3
-  @@ push s4
-  @@ push s5
-  @@ push s6
-  @@ push s7
+  @@ move s0 t2
+  @@ move s1 t3
+  @@ move s2 t4
+  @@ move s3 t5
+  @@ move s4 t6
+  @@ move s5 t7
+  @@ move s6 t8
+  @@ move s7 t9
   @@ move fp sp
   @@ tr_seq fdef.code
   @@ label return_label
   (* Restaurations des s_*)
   @@ addi sp sp 4
-  @@ lw s7 0 sp
-  @@ lw s6 (4) sp
-  @@ lw s5 (8) sp
-  @@ lw s4 (12) sp
-  @@ lw s3 (16) sp
-  @@ lw s2 (20) sp
-  @@ lw s1 (24) sp
-  @@ lw s0 (28) sp    
-  @@ lw ra (32) sp   (* Récupération de l'adresse de retour *)
-  @@ lw fp (36) sp   (* Restauration du pointeur de base de l'appelant *)
+  @@ move t2 s0
+  @@ move t3 s1
+  @@ move t4 s2
+  @@ move t5 s3
+  @@ move t6 s4
+  @@ move t7 s5
+  @@ move t8 s6
+  @@ move t9 s7   
+  @@ lw ra 0 sp   (* Récupération de l'adresse de retour *)
+  @@ lw fp 4 sp   (* Restauration du pointeur de base de l'appelant *)
   @@ move sp fp       (* Mose à jour du début de la pile *)
   @@ jr ra
 
