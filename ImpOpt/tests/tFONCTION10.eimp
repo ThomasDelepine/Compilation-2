@@ -1,0 +1,11 @@
+function main {
+0 params
+0 locals
+  input $s2;
+  input $s1;
+  input $s0;
+  putchar $s2;
+  putchar $s1;
+  putchar $s0;
+}
+

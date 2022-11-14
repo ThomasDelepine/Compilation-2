@@ -1,0 +1,13 @@
+function main() {
+  var arg1;
+  var arg2;
+  var arg3;
+
+  input arg1; {4}
+  input arg2; {5}
+  input arg3; {6}
+  putchar arg1; {3}
+  putchar arg2; {2}
+  putchar arg3; {1}
+}
+

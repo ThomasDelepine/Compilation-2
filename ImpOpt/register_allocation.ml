@@ -135,6 +135,7 @@ let liveness fdef =
          let out' = VSet.remove "$v0" out' in
          VSet.add r out'
       | Input r ->
+         print_string r; print_string "\n";
          (* Attention : réaliser putchar en MIPS nécessite d'écrire dans les
           registres réels $a0 et $v0. *)
          let out' = VSet.remove "$v0" out in
@@ -316,7 +317,7 @@ let interference_graph fdef =
       interférences trouvées dans l'instruction [i], de numéro [n].
    *)
   and instr n i g = match i with
-    | Read(rd, _) | Move (rd, _) | Li(rd, _) | Write (rd, _) | Cst(rd, _) | Unop(rd, _, _) | Binop(rd, _, _, _) ->
+    | Input rd | Read(rd, _) | Move (rd, _) | Li(rd, _) | Write (rd, _) | Cst(rd, _) | Unop(rd, _, _) | Binop(rd, _, _, _) ->
       (*ajouter à g une arête entre rd et chaque registre virtuel vivant en sortie*)
       (* Dans chacun de ces cas l'instruction écrit uniquement dans le
           registre [rd]. On ajouter à g une arête entre rd et chaque
@@ -332,7 +333,7 @@ let interference_graph fdef =
       let g' = seq s1 g in (* En revanche, on calcul pour s1 et s2, les modifications*)
       seq s2 g'            (* qu'ils peuvent apporter à g*)
       
-    | Putchar _ | Input _  | Return | Push _ | Pop _ -> 
+    | Putchar _ | Return | Push _ | Pop _ -> 
        g
     | Call(_, _) ->
        g
@@ -597,6 +598,7 @@ let allocation (fdef: function_def): register Graph.VMap.t * int =
    let k = 8 in
    let g = interference_graph fdef in
    let c = color g k in
+   print_colors c;
    let cptStacked = ref 0 in
    let color2register co = 
       if co = 0 then Actual "$s0"

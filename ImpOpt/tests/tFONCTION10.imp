@@ -1,0 +1,5 @@
+function main(arg1, arg2, arg3) {
+  	putchar(arg1);
+	putchar(arg2);
+	putchar(arg3);
+}	
