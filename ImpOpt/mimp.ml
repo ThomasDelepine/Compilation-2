@@ -20,6 +20,7 @@ type expression =
 
 type instruction =
   | Putchar of expression
+  | Input   of expression
   | Set     of string * expression
   | If      of expression * sequence * sequence
   | While   of expression * sequence
@@ -83,6 +84,8 @@ let pp_program prog out_channel =
   let rec pp_instr = function
     | Putchar e ->
        print "putchar(%s);" (pp_expr e)
+    | Input e ->
+       print "input(%s);" (pp_expr e)
     | Set(x, e) ->
        print "%s = %s;" x (pp_expr e)
     | If(e, s1, s2) ->

@@ -3,48 +3,48 @@ var espace;
 function main {
 0 params
 0 locals
-  $t2 <- 32;
-  *espace <- $t2;
-  $t2 <- 10;
-  push $t2;
-  $t2 <- 5;
-  push $t2;
+  $s0 <- 32;
+  *espace <- $s0;
+  $s0 <- 10;
+  push $s0;
+  $s0 <- 5;
+  push $s0;
   call affiche_ligne;
 }
 
 function affiche_ligne {
 2 params
 2 locals
-  $t3 <- 0;
-  $t0 <- *{4};
-  $t4 <- $t0(+1);
-  $t4 <- $t3 < $t4;
+  $s1 <- 0;
+  $t0 <- *{13};
+  $s2 <- $t0(+1);
+  $s2 <- $s1 < $s2;
   while (
-    $t0 <- *{4};
-    $t4 <- $t0(+1);
-    $t4 <- $t3 < $t4;
-    $t4
+    $t0 <- *{13};
+    $s2 <- $t0(+1);
+    $s2 <- $s1 < $s2;
+    $s2
   ) {
-    $t0 <- *{3};
-    $t1 <- *{3};
-    $t5 <- $t0 * $t1;
-    $t4 <- $t3 * $t3;
-    $t5 <- $t5 + $t4;
-    $t0 <- *{4};
-    $t1 <- *{4};
-    $t4 <- $t0 * $t1;
-    $t4 <- $t5 < $t4;
-    if ($t4) {
-      $t4 <- 46;
-      putchar $t4;
+    $t0 <- *{12};
+    $t1 <- *{12};
+    $s3 <- $t0 * $t1;
+    $s2 <- $s1 * $s1;
+    $s3 <- $s3 + $s2;
+    $t0 <- *{13};
+    $t1 <- *{13};
+    $s2 <- $t0 * $t1;
+    $s2 <- $s3 < $s2;
+    if ($s2) {
+      $s2 <- 46;
+      putchar $s2;
     } else {
-      $t4 <- 35;
-      putchar $t4;
+      $s2 <- 35;
+      putchar $s2;
     }
-    $t4 <- *espace;
-    putchar $t4;
-    $t3 <- $t3(+1);
-    $t3 <- $t3;
+    $s2 <- *espace;
+    putchar $s2;
+    $s1 <- $s1(+1);
+    $s1 <- $s1;
   }
 }
 

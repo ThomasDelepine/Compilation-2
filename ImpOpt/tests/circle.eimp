@@ -2,24 +2,22 @@ var retour;
 var espace;
 
 function main {
-1 params
-1 locals
+0 params
+0 locals
+  input $s2;
   $s1 <- 0;
   $s0 <- 10;
   *retour <- $s0;
   $s0 <- 32;
   *espace <- $s0;
-  $t0 <- *{11};
-  $s0 <- $t0(+1);
+  $s0 <- $s2(+1);
   $s0 <- $s1 < $s0;
   while (
-    $t0 <- *{11};
-    $s0 <- $t0(+1);
+    $s0 <- $s2(+1);
     $s0 <- $s1 < $s0;
     $s0
   ) {
-    $t0 <- *{11};
-    push $t0;
+    push $s2;
     push $s1;
     call affiche_ligne;
     $s0 <- *retour;
@@ -33,22 +31,22 @@ function affiche_ligne {
 2 params
 2 locals
   $s1 <- 0;
-  $t0 <- *{12};
+  $t0 <- *{13};
   $s2 <- $t0(+1);
   $s2 <- $s1 < $s2;
   while (
-    $t0 <- *{12};
+    $t0 <- *{13};
     $s2 <- $t0(+1);
     $s2 <- $s1 < $s2;
     $s2
   ) {
-    $t0 <- *{11};
-    $t1 <- *{11};
+    $t0 <- *{12};
+    $t1 <- *{12};
     $s3 <- $t0 * $t1;
     $s2 <- $s1 * $s1;
     $s3 <- $s3 + $s2;
-    $t0 <- *{12};
-    $t1 <- *{12};
+    $t0 <- *{13};
+    $t1 <- *{13};
     $s2 <- $t0 * $t1;
     $s2 <- $s3 < $s2;
     if ($s2) {

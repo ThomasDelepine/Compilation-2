@@ -134,6 +134,11 @@ let liveness fdef =
          let out' = VSet.remove "$a0" out in
          let out' = VSet.remove "$v0" out' in
          VSet.add r out'
+      | Input r ->
+         (* Attention : réaliser putchar en MIPS nécessite d'écrire dans les
+          registres réels $a0 et $v0. *)
+         let out' = VSet.remove "$v0" out in
+         VSet.add r out'
       | Write(x, r) ->
       (* Écriture dans une variable globale : le registre virtuel [r] est lu,
           et aucun registre n'est modifié. On ne fait donc qu'ajouter [r] aux
@@ -327,7 +332,7 @@ let interference_graph fdef =
       let g' = seq s1 g in (* En revanche, on calcul pour s1 et s2, les modifications*)
       seq s2 g'            (* qu'ils peuvent apporter à g*)
       
-    | Putchar _  | Return | Push _ | Pop _ -> 
+    | Putchar _ | Input _  | Return | Push _ | Pop _ -> 
        g
     | Call(_, _) ->
        g

@@ -28,6 +28,7 @@ type vreg = string
    paramètres de l'instruction. *)
 type instruction =
   | Putchar of vreg
+  | Input   of vreg
   (* Lecture de la valeur d'une variable ou d'un paramètre *)
   | Read    of vreg * string
   (* Mutation d'une variable *)
@@ -104,6 +105,8 @@ open Printf
 let rec print_instr = function
    | Putchar vr ->
       print_string "putchar "; print_string vr; print_string "\n"
+   | Input vr ->
+      print_string "input "; print_string vr; print_string "\n"
    | Read(vrd, x) ->
       print_string vrd; print_string "<-"; print_string x; print_string "(Read)\n"
    | Write(x, vr) ->
@@ -159,6 +162,8 @@ let pp_program prog out_channel =
     let rec pp_instr = function
       | Putchar vr ->
          print "putchar %s;" vr
+      | Input vr ->
+         print "input %s;" vr
       | Read(vrd, x) ->
          print "%s <- *%s;" vrd x
       | Write(x, vr) ->

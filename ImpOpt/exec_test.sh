@@ -42,5 +42,5 @@ ocamlbuild impc.native
 
 
 # Work in progress
-#./impc.native tests/circle.imp
+./impc.native tests/circle.imp
 

@@ -11,6 +11,7 @@ let tr_fdef fdef =
 
   let rec tr_instr = function
     | Putchar r          -> move a0 r @@ li v0 11 @@ syscall
+    | Input r            -> li v0 5 @@ syscall @@ move r v0
 
     | Read(rd, Global x) -> la rd x @@ lw rd 0 rd
     | Read(rd, Stack i)  -> subi gp gp (-4*i) @@ lw rd 0 gp @@ subi gp gp (4*i)
@@ -142,8 +143,7 @@ let tr_prog prog =
      Code principal pour générer le code MIPS associé au programme source.
    *)
   let function_codes = List.fold_right
-    (fun fdef code ->
-      label fdef.name @@ tr_fdef fdef @@ code)
+    (fun fdef code -> label fdef.name @@ tr_fdef fdef @@ code)
     prog.functions nop
   in
   let text = init @@ function_codes @@ built_ins

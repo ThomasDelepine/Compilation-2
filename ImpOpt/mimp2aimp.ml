@@ -94,6 +94,9 @@ let tr_fdef fdef =
     | Mimp.Putchar e ->
        let r, s = tr_expr e in
        s ++ Putchar r
+    | Mimp.Input e ->
+        let r, s = tr_expr e in
+       s ++ Input r
     | Mimp.Set(x, Cst n) ->
       let r, s = tr_expr (Cst n) in
       (* Si x est local, alors on move r dans x, Si x est global alors on write*)
@@ -127,9 +130,17 @@ let tr_fdef fdef =
        des registres virtuels callee_saved. *)
     tr_seq Mimp.(fdef.code) 
   in
+  if fdef.name = "main" then
   {
-    name = Mimp.(fdef.name);
-    params = Mimp.(fdef.params);
+    name = fdef.name;
+    params = []; 
+    locals = !vregs @ fdef.params;
+    code = (List.fold_left (fun acc arg -> acc ++ Input(arg)) Nop fdef.params) @@ code
+  }
+  else
+  {
+    name = fdef.name;
+    params = fdef.params; 
     locals = !vregs;
     code = code
   }

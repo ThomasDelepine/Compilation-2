@@ -14,8 +14,10 @@ type mem_access =
 
 type instruction =
   | Putchar of reg
+  | Input   of reg
   | Read    of reg * mem_access
   | Write   of mem_access * reg
+  (*| Input   of reg*)
   | Move    of reg * reg
   | Li      of reg * int
   | Push    of reg
@@ -39,8 +41,8 @@ let rec seq = function
 
 type function_def = {
     name: string;
-    params: int; (* string list; *)
-    locals: int; (* string list; *)
+    params: int;
+    locals: int; 
     code: sequence;
   }
 
@@ -73,6 +75,8 @@ let pp_program prog out_channel =
   let rec pp_instr = function
     | Putchar vr ->
        print "putchar %s;" vr
+    | Input vr ->
+       print "input %s;" vr
     | Read(vrd, a) ->
        print "%s <- *%s;" vrd (pp_mem_access a)
     | Write(a, vr) ->

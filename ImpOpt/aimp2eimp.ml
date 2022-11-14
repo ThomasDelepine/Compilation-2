@@ -78,6 +78,9 @@ let tr_fdef fdef =
   let rec tr_instr = function          
     | Aimp.Putchar vr -> 
         load1 vr @@ Instr(Putchar(op1 vr))
+
+    | Aimp.Input vr ->
+        load1 vr @@ Instr(Input(op1 vr))
         
     | Aimp.Read(vrd, x) ->
         Instr(Read(dst vrd , Global x)) @@ save vrd

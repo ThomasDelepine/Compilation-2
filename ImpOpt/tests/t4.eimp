@@ -1,15 +1,15 @@
 function main {
 0 params
 0 locals
-  $t2 <- 35;
-  push $t2;
+  $s0 <- 35;
+  push $s0;
   call f;
 }
 
 function f {
 1 params
 1 locals
-  $t0 <- *{3};
+  $t0 <- *{12};
   putchar $t0;
 }
 
