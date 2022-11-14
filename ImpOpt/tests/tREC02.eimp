@@ -1,0 +1,35 @@
+function main {
+0 params
+0 locals
+  $s0 <- 10;
+  push $s0;
+  $s0 <- 0;
+  push $s0;
+  call somme;
+  putchar $v0;
+}
+
+function somme {
+2 params
+2 locals
+  $t0 <- *{11};
+  $t1 <- *{12};
+  $s2 <- $t0 < $t1;
+  if ($s2) {
+    $t0 <- *{12};
+    push $t0;
+    $t0 <- *{11};
+    $s2 <- $t0(+1);
+    push $s2;
+    call somme;
+    $t0 <- *{11};
+    $s0 <- $t0 + $v0;
+    $v0 <- $s0;
+    return;
+  } else {
+    $t0 <- *{12};
+    $v0 <- $t0;
+    return;
+  }
+}
+

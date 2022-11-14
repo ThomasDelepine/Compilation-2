@@ -1,0 +1,11 @@
+function main() {
+  putchar(somme(0,10));
+}
+
+function somme(cpt, max) {
+  	if(cpt < max){
+		return cpt + somme(cpt + 1, max);
+	} else {
+		return max;
+	}
+}

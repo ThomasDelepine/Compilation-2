@@ -113,7 +113,7 @@ let tr_fdef fdef =
     | Mimp.Return e ->
        (* Le résultat renvoyé doit être placé dans $v0. *)
        let x, s = tr_expr e in
-       s ++ Move(x, "$v0") ++ Return       
+       s ++ Move("$v0", x) ++ Return       
     | Mimp.Expr e ->
        let r, s = tr_expr e in
        s

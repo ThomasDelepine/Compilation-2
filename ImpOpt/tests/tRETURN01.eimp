@@ -1,0 +1,17 @@
+function main {
+0 params
+0 locals
+  $s0 <- 35;
+  push $s0;
+  call f;
+  putchar $v0;
+}
+
+function f {
+1 params
+1 locals
+  $t0 <- *{11};
+  $v0 <- $t0;
+  return;
+}
+

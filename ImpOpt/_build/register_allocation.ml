@@ -608,4 +608,5 @@ let allocation (fdef: function_def): register Graph.VMap.t * int =
    let map' =  List.fold_left 
                (fun map (key, co) ->  if List.mem key fdef.params then map else VMap.add key (color2register co) map) VMap.empty (VMap.bindings c) in
    let map', _ = List.fold_left (fun (map, n) key -> incr cptStacked; (VMap.add key (Stacked(-11 - n)) map, n + 1)) (map', 0) (fdef.params) in
+   let map' = VMap.add "$v0" (Actual "$v0") map' in
    map', !cptStacked

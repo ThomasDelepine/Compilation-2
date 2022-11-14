@@ -1,0 +1,29 @@
+function main() {
+  var #0;
+
+  #0 <- 7; {1}
+  push #0; {2}
+  call f (1); {3}
+}
+
+function f(n) {
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+
+  #0 <- 10; {4}
+  #1 <- n < #0; {5}
+  if (#1) {
+    #4 <- 35; {11}
+    putchar #4; {12}
+    #3 <- 100; {8}
+    push #3; {9}
+    call f (1); {10}
+  } else {
+    #2 <- 36; {6}
+    putchar #2; {7}
+  } {13}
+}
+

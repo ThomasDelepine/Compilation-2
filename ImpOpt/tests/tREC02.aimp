@@ -1,0 +1,32 @@
+function main() {
+  var #1;
+  var #0;
+
+  #0 <- 10; {1}
+  push #0; {2}
+  #1 <- 0; {3}
+  push #1; {4}
+  call somme (2); {5}
+  putchar $v0; {6}
+}
+
+function somme(cpt, max) {
+  var #2;
+  var #1;
+  var #0;
+
+  #0 <- cpt < max; {7}
+  if (#0) {
+    push max; {10}
+    #1 <- cpt(+1); {11}
+    push #1; {12}
+    call somme (2); {13}
+    #2 <- cpt + $v0; {14}
+    $v0 <- #2; {15}
+    return; {16}
+  } else {
+    $v0 <- max; {8}
+    return; {9}
+  } {17}
+}
+

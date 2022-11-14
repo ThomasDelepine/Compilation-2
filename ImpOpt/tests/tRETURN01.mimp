@@ -1,0 +1,8 @@
+function main() {
+  putchar(f(35));
+}
+
+function f(n) {
+  return(n);
+}
+

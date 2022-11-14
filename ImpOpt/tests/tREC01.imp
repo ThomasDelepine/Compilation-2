@@ -1,0 +1,12 @@
+function main() {
+  f(7);
+}
+
+function f(n) {
+  	if(n < 10){
+		putchar(35);
+		f(100);
+	} else {
+		putchar(36);
+	}
+}
