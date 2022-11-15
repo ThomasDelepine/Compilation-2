@@ -1,0 +1,61 @@
+var glob;
+var glob2;
+var glob3;
+
+function main() {
+  var #10;
+  var #9;
+  var #8;
+  var #7;
+  var #6;
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var a;
+  var b;
+  var c;
+  var d;
+  var e;
+
+  a <- 1; {32}
+  b <- 0; {30}
+  c <- 1; {28}
+  d <- 0; {26}
+  e <- 1; {24}
+  if (a) {
+    if (b) {
+      #5 <- 1; {18}
+      $v0 <- #5; {19}
+      return; {20}
+    } else {
+      if (c) {
+        if (d) {
+          #4 <- 1; {13}
+          $v0 <- #4; {14}
+          return; {15}
+        } else {
+          if (e) {
+            #3 <- 35; {10}
+            putchar #3; {11}
+          } else {
+            #2 <- 1; {7}
+            $v0 <- #2; {8}
+            return; {9}
+          } {12}
+        } {16}
+      } else {
+        #1 <- 1; {4}
+        $v0 <- #1; {5}
+        return; {6}
+      } {17}
+    } {21}
+  } else {
+    #0 <- 1; {1}
+    $v0 <- #0; {2}
+    return; {3}
+  } {22}
+}
+

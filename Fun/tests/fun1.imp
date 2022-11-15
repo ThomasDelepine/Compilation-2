@@ -13,5 +13,5 @@ main {
   t_2 = malloc((2*4));
   t_2[0] = 7;
   t_2[1] = f_0;
-  print_int(f_0(t_2));
+  print_int(((f_0+(0*4)))(t_2));
 }

@@ -1,0 +1,81 @@
+function main() {
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var i;
+
+  i <- 0; {13}
+  #0 <- 7; {1}
+  #1 <- i < #0; {2}
+  while (
+    #0 <- 7; {1}
+    #1 <- i < #0; {2}
+    #1
+  ) {
+    push i; {5}
+    #3 <- 0; {6}
+    push #3; {7}
+    call f1 (2); {8}
+    #4 <- $v0(+65); {9}
+    putchar #4; {10}
+    #2 <- i(+1); {3}
+    i <- #2; {4}
+  } {11}
+}
+
+function f1(n, max) {
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var tmp;
+
+  tmp <- 1; {27}
+  #0 <- n < max; {14}
+  if (#0) {
+    push max; {18}
+    #2 <- n(+1); {19}
+    push #2; {20}
+    call f2 (2); {21}
+    #3 <- $v0(+1); {22}
+    $v0 <- #3; {23}
+    return; {24}
+  } else {
+    #1 <- 0; {15}
+    $v0 <- #1; {16}
+    return; {17}
+  } {25}
+}
+
+function f2(n, max) {
+  var #5;
+  var #4;
+  var #3;
+  var #2;
+  var #1;
+  var #0;
+  var tmp;
+  var tmp2;
+
+  tmp <- 3; {43}
+  tmp2 <- 2; {41}
+  #0 <- n < max; {28}
+  if (#0) {
+    push max; {32}
+    #2 <- n(+1); {33}
+    push #2; {34}
+    call f1 (2); {35}
+    #3 <- $v0(+1); {36}
+    $v0 <- #3; {37}
+    return; {38}
+  } else {
+    #1 <- 0; {29}
+    $v0 <- #1; {30}
+    return; {31}
+  } {39}
+}
+

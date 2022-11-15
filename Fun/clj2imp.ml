@@ -90,15 +90,11 @@ let tr_expr e env =
       | Clj.App (e1, e2) -> 
          let is1, te1 = tr_expr e1 env in
          let is2, te2 = tr_expr e2 env in
-         (* ICI, afficher e1*)
-         Clj.print_exp e1;
-         print_string "\n";
-         Imp.print_exp te1;
          (match te1 with
             |Var x -> 
                   is1 @ is2, Call(x, [te2])
-            |Deref(Binop(_, Var x, _)) -> is1 @ is2, Call(x, [te2])
-            |_ -> print_string "?"; is1 @ is2, te1)
+            |Deref(e) -> is1 @ is2, PCall(e, [te2])
+            |_ -> is1 @ is2, te1)
 
       | Clj.If (cond, e1, e2) ->                                    
          let iscond, tcond = tr_expr cond env in
@@ -124,9 +120,6 @@ let tr_expr e env =
          let is2, t2 = tr_expr e2 (STbl.add x lv env) in
 
          is1 @ [Imp.Set(lv, t1)] @ is2, t2
-
-      | _ ->
-         failwith "todo clj2imp _ "
 
   in
     

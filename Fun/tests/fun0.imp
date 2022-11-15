@@ -1,20 +1,9 @@
-var t_4;
-var t_3;
 var t_2;
 var t_1;
 var z_0;
 
 function fun_0(param_y,closure) {
-  var t_0;
-
-  t_0 = malloc((2*4));
-  t_0[0] = fun_1;
-  t_0[1] = param_y;
-  return(t_0);
-}
-
-function fun_1(param_x,closure) {
-  return(((closure[1]*2)+1));
+  return(((param_y*2)+1));
 }
 
 main {
@@ -24,11 +13,5 @@ main {
   t_2 = malloc((2*4));
   t_2[0] = 7;
   t_2[1] = z_0;
-  t_4 = malloc((2*4));
-  t_4[0] = 7;
-  t_4[1] = z_0;
-  t_3 = malloc((2*4));
-  t_3[0] = 3;
-  t_3[1] = z_0(t_4);
-  print_int(*(z_0(t_2)+(0*4)));
+  print_int(((z_0+(0*4)))(t_2));
 }

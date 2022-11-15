@@ -1,0 +1,39 @@
+var glob;
+var glob2;
+var glob3;
+
+function main() {
+    var a;
+    var b;
+    var c;
+    var d;
+    var e;
+
+    a = 1;
+    b = 0;
+    c = 1;
+    d = 0;
+    e = 1;
+
+    if (a) {
+      if (b) {
+        return 1;
+      } else {
+        if (c) {
+          if (d) {
+            return 1;
+          } else {
+            if (e) {
+              putchar(35);
+            } else {
+              return 1;
+            }
+          }
+        } else {
+          return 1;
+        }
+      }
+    } else {
+      return 1;
+    }
+}

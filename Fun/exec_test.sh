@@ -1,8 +1,10 @@
 ocamlbuild func.native
+
+# Tests :
+
 ./func.native tests/arith.fun
 ./func.native tests/fact.fun
 ./func.native tests/fun.fun
-./func.native tests/fun0.fun
 ./func.native tests/fun1.fun
 ./func.native tests/fun2.fun
 ./func.native tests/if.fun

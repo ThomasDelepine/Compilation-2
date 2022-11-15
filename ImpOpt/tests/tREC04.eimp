@@ -1,0 +1,71 @@
+function main {
+0 params
+0 locals
+  $s0 <- 0;
+  $s1 <- 7;
+  $s1 <- $s0 < $s1;
+  while (
+    $s1 <- 7;
+    $s1 <- $s0 < $s1;
+    $s1
+  ) {
+    push $s0;
+    $s1 <- 0;
+    push $s1;
+    call f1;
+    $s1 <- $v0(+65);
+    putchar $s1;
+    $s0 <- $s0(+1);
+    $s0 <- $s0;
+  }
+}
+
+function f1 {
+2 params
+2 locals
+  $s0 <- 1;
+  $t0 <- *{12};
+  $t1 <- *{13};
+  $s0 <- $t0 < $t1;
+  if ($s0) {
+    $t0 <- *{13};
+    push $t0;
+    $t0 <- *{12};
+    $s0 <- $t0(+1);
+    push $s0;
+    call f2;
+    $s0 <- $v0(+1);
+    $v0 <- $s0;
+    return;
+  } else {
+    $s0 <- 0;
+    $v0 <- $s0;
+    return;
+  }
+}
+
+function f2 {
+2 params
+2 locals
+  $s0 <- 3;
+  $s0 <- 2;
+  $t0 <- *{12};
+  $t1 <- *{13};
+  $s0 <- $t0 < $t1;
+  if ($s0) {
+    $t0 <- *{13};
+    push $t0;
+    $t0 <- *{12};
+    $s0 <- $t0(+1);
+    push $s0;
+    call f1;
+    $s0 <- $v0(+1);
+    $v0 <- $s0;
+    return;
+  } else {
+    $s0 <- 0;
+    $v0 <- $s0;
+    return;
+  }
+}
+

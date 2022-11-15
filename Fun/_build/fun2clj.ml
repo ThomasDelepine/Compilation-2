@@ -89,7 +89,7 @@ let translate_program e =
       | Fun.App(e1, e2) -> 
         let t1 = crawl e1 bvars in
         let t2 = crawl e2 bvars in
-        Clj.App(Clj.TplGet(t1, 0), Clj.Tpl([t2] @ [t1]))
+        Clj.App(Clj.TplGet(t1, 0), Clj.Tpl([t2]@[t1]))
 
       | Fun.If(econd, e1, e2) -> 
         Clj.If(crawl econd bvars, crawl e1 bvars, crawl e2 bvars)

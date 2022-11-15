@@ -56,3 +56,66 @@ type program = {
   functions: function_def list;
   code: expression;
 }
+
+open Printf
+
+let pp_binop = function
+  | Ops.Add -> "+"
+  | Ops.Sub -> "-"
+  | Ops.Mul -> "*"
+  | Ops.Div -> "/"
+  | Ops.Rem -> "%"
+  | Ops.Lsl -> "lsl"
+  | Ops.Lsr -> "lsr"
+  | Ops.Eq  -> "="
+  | Ops.Neq -> "!="
+  | Ops.Lt  -> "<"
+  | Ops.Le  -> "<="
+  | Ops.Gt  -> ">"
+  | Ops.Ge  -> ">="
+  | Ops.And -> "&&"
+  | Ops.Or  -> "||"
+
+let pp_unop = function
+  | Ops.Minus -> "-"
+  | Ops.Not   -> "!"
+
+
+let pp_program prog out_channel =
+  let print s = fprintf out_channel s in
+  let margin = ref 0 in
+  let pp_margin () = let n = !margin in  
+                     let n = 3*n in 
+                     String.make (n) ' ' in
+  let pp_var = function    
+    | CVar n -> sprintf "CVar(%i)" n   
+    | Name s -> sprintf "%s" s
+  in
+  let rec pp_expr = function
+    | Cst n -> sprintf "%i" n
+    | Bool b -> if b then "True" else  "False"
+    | Var v -> sprintf "%s" (pp_var v)
+    | Unop (op, e) -> sprintf "%s%s" (pp_unop op) (pp_expr e)
+    | Binop (op, e1, e2) -> sprintf "(%s %s %s)" (pp_expr e1) (pp_binop op) (pp_expr e2)
+    | Tpl l -> sprintf "[%s]" (List.fold_left (fun acc e -> if acc = "" then pp_expr e else acc^" "^(pp_expr e)) "" l)
+    | TplGet (e, n) -> sprintf "%s[%i]" (pp_expr e) n
+    | FunRef s -> s
+    | App(e1, e2) -> sprintf "%s(%s)" (pp_expr e1) (pp_expr e2)
+    | If (cond, e1, e2) ->
+              (sprintf "if (%s) {\n" (pp_expr cond))^
+              (incr margin; pp_expr e1)^(decr margin;
+              pp_margin())^"} else {\n"^
+              (incr margin; pp_expr e2)^(decr margin;
+              pp_margin())^"}"
+    | LetIn (s, e1, e2) -> sprintf "let %s = %s in %s" s (pp_expr e1) (pp_expr e2)
+    | LetRec (s, e1, e2) -> sprintf "let rec %s = %s in %s" s (pp_expr e1) (pp_expr e2)
+  in
+  let pp_function fdef =
+    (sprintf "function %s(%s) {\n" fdef.name fdef.param)^
+    (margin := !margin + 1; pp_margin())^
+    (pp_expr fdef.code)^
+    (margin := !margin - 1; "\n}\n\n")
+  in
+  List.iter (fun fdef -> print "%s" (pp_function fdef)) prog.functions;
+  print "%s" (pp_expr prog.code)  
+

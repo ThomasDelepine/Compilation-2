@@ -18,11 +18,18 @@ let () =
   let prog = Funparser.program Funlexer.token lb
   in
   close_in c;
+
   let progclj = Fun2clj.translate_program prog in
+  let output_file = (Filename.chop_suffix file ".fun") ^ ".clj" in
+  let out = open_out output_file in
+  Clj.pp_program progclj out;
+  close_out out;
+
   let progimp = Clj2imp.translate_program progclj in
   let output_file = (Filename.chop_suffix file ".fun") ^ ".imp" in
   let out = open_out output_file in
   Imppp.pp_program progimp out;
   close_out out;
+
   exit 0
     

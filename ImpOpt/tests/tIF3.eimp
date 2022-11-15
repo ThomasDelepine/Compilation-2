@@ -1,0 +1,46 @@
+var glob;
+var glob2;
+var glob3;
+
+function main {
+0 params
+0 locals
+  $s5 <- 1;
+  $s4 <- 0;
+  $s3 <- 1;
+  $s2 <- 0;
+  $s0 <- 1;
+  if ($s5) {
+    if ($s4) {
+      $s0 <- 1;
+      $v0 <- $s0;
+      return;
+    } else {
+      if ($s3) {
+        if ($s2) {
+          $s0 <- 1;
+          $v0 <- $s0;
+          return;
+        } else {
+          if ($s0) {
+            $s0 <- 35;
+            putchar $s0;
+          } else {
+            $s0 <- 1;
+            $v0 <- $s0;
+            return;
+          }
+        }
+      } else {
+        $s0 <- 1;
+        $v0 <- $s0;
+        return;
+      }
+    }
+  } else {
+    $s0 <- 1;
+    $v0 <- $s0;
+    return;
+  }
+}
+

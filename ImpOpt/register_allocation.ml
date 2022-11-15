@@ -135,7 +135,6 @@ let liveness fdef =
          let out' = VSet.remove "$v0" out' in
          VSet.add r out'
       | Input r ->
-         print_string r; print_string "\n";
          (* Attention : réaliser putchar en MIPS nécessite d'écrire dans les
           registres réels $a0 et $v0. *)
          let out' = VSet.remove "$v0" out in
@@ -598,7 +597,6 @@ let allocation (fdef: function_def): register Graph.VMap.t * int =
    let k = 8 in
    let g = interference_graph fdef in
    let c = color g k in
-   print_colors c;
    let cptStacked = ref 0 in
    let color2register co = 
       if co = 0 then Actual "$s0"
