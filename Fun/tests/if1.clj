@@ -1,4 +1,4 @@
-(6 * if ((True || False)) {
+(6 * if (True) {
 if (False) {
 6} else {
 7}} else {

@@ -12,7 +12,7 @@ function fun_0(param_n,closure) {
     t_0 = malloc((2*4));
     t_0[0] = (param_n-1);
     t_0[1] = closure[1];
-    var_1 = (param_n**(closure[1]+(0*4)));
+    var_1 = (param_n*((closure[1]+(0*4)))(t_0));
   }
   return(var_1);
 }
@@ -25,5 +25,5 @@ main {
   t_2 = malloc((2*4));
   t_2[0] = 6;
   t_2[1] = fact_0;
-  print_int(fact_0(t_2));
+  print_int(((fact_0+(0*4)))(t_2));
 }

@@ -103,10 +103,8 @@ let pp_program prog out_channel =
     | App(e1, e2) -> sprintf "%s(%s)" (pp_expr e1) (pp_expr e2)
     | If (cond, e1, e2) ->
               (sprintf "if (%s) {\n" (pp_expr cond))^
-              (incr margin; pp_expr e1)^(decr margin;
-              pp_margin())^"} else {\n"^
-              (incr margin; pp_expr e2)^(decr margin;
-              pp_margin())^"}"
+              (pp_expr e1)^"} else {\n"^
+              (pp_expr e2)^"}"
     | LetIn (s, e1, e2) -> sprintf "let %s = %s in %s" s (pp_expr e1) (pp_expr e2)
     | LetRec (s, e1, e2) -> sprintf "let rec %s = %s in %s" s (pp_expr e1) (pp_expr e2)
   in

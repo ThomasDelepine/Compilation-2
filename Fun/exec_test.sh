@@ -9,6 +9,7 @@ ocamlbuild func.native
 ./func.native tests/fun2.fun
 ./func.native tests/if.fun
 ./func.native tests/if0.fun
+./func.native tests/if1.fun
 ./func.native tests/letin.fun
 ./func.native tests/letin0.fun
 ./func.native tests/letin2.fun
