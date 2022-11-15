@@ -6,7 +6,7 @@ Le projet est décomposé en deux partie. La partie principale dans le répertoi
 
 ## ImpOpt
 
-Dans le répertoire ImpOpt, on retrouve les fichiers correspondants aux divers étapes de la traduction, ainsi qu'un répertoire `tests`. Dans ce dernier se trouve l'ensemble des tests et exemples sur lesquels la traduction fonctionne.
+Dans le répertoire ImpOpt, on retrouve les fichiers correspondants aux diverses étapes de la traduction, ainsi qu'un répertoire `tests`. Dans ce dernier se trouve l'ensemble des tests et exemples sur lesquels la traduction fonctionne.
 
 ### Tests
 
@@ -32,3 +32,16 @@ La version de Imp qu'il est possible de traduire gère les cas suivants
 - l'appel de fonction, les fonctions peuvent prendre des paramètres, et peuvent renvoyer une valeur `return _;` ou non
 - les arguments de la fonction main sont pris en compte, et à entrer en input au début de l'exécution du programme
 - les appels récursifs
+
+## Fun
+
+Dans le répertoire Fun, on retrouve les fichiers correspondants aux diverses étapes de la traduction, ainsi qu'un repertoire `tests`. Dans ce dernier, se trouve l'ensemble des tests et exemples sur lesquels la traduction fonctionne.
+
+Ces tests sont essaye d'illustrer des cas d'utilisations des divers éléments de Fun pris en compte par la traduction, à savoir :
+
+- les opérations arithmétiques et booléennes classiques
+- les appels de fonctions 
+- les conditionnelles
+- ajout d'un pp pour Clj
+
+M'étant principalement concentré sur la traduction Imp vers Mips, cette partie est moins testée, et est moins complète.
